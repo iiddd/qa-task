@@ -5,9 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
+/**
+ * This class is used to get and keep driver and set before and after actions for all tests
+ */
+
 public class BaseTest {
 
-    private WebDriver driver;
+    public static WebDriver driver;
     private static final String CHROMEDRIVER_PATH_PROPERTY = "webdriver.chrome.driver";
     private static final String GECKODRIVER_PATH_PROPERTY = "webdriver.gecko.driver";
     private static final String CHROMEDRIVER_MAC_PATH = "src/main/resources/drivers/mac/chromedriver";
@@ -22,6 +26,13 @@ public class BaseTest {
     @BeforeClass
     public void beforeAnyTest() {
         openTestApp();
+    }
+
+    @AfterClass
+    public void afterTest() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     private void openTestApp() {
@@ -57,12 +68,5 @@ public class BaseTest {
 
     private boolean isMac() {
         return System.getProperty(OS_NAME_PROPERTY).equals(MAC_OS_X_PLATFORM_NAME);
-    }
-
-    @AfterClass
-    public void afterTest() {
-        if (driver != null) {
-            driver.quit();
-        }
     }
 }
