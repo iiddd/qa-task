@@ -72,7 +72,8 @@
                         <version>2.7.2</version>
                         <configuration>
                             <systemPropertyVariables>
-                                <webdriver.chrome.driver>src/main/resources/drivers/win/chromedriver.exe</webdriver.chrome.driver>
+                                <webdriver.chrome.driver>src/main/resources/drivers/win/chromedriver.exe
+                                </webdriver.chrome.driver>
                                 <browser>chrome</browser>
                             </systemPropertyVariables>
                         </configuration>
@@ -91,7 +92,9 @@
                         <version>2.7.2</version>
                         <configuration>
                             <systemPropertyVariables>
-                                <browser>firefox</browser>
+                                <webdriver.gecko.driver>src/main/resources/drivers/win/gecko.exe
+                                </webdriver.gecko.driver>
+                                <browser>gecko</browser>
                             </systemPropertyVariables>
                         </configuration>
                     </plugin>
