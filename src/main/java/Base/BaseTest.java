@@ -3,28 +3,34 @@ package Base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
 public class BaseTest {
 
     private WebDriver driver;
+    private static final String CHROMEDRIVER_PATH_PROPERTY = "webdriver.chrome.driver";
+    private static final String CHROMEDRIVER_MAC_PATH = "src/main/resources/drivers/mac/chromedriver";
+    private static final String OS_NAME_PROPERTY = "os.name";
+    private static final String MAC_OS_X_PLATFORM_NAME = "Mac OS X";
     private static final String BROWSER_PROPERTY = "browser";
     private static final String FF_DRIVER_PROPERTY = "gecko";
     private static final String CHROME_DRIVER_PROPERTY = "chrome";
-    private static final String BASE_URL = "http://cafetownsend-angular-rails.herokuapp.com/openTestApp";
+    private static final String BASE_URL = "http://cafetownsend-angular-rails.herokuapp.com/";
 
     @BeforeClass
     public void beforeAnyTest() {
         openTestApp();
     }
 
-    protected void openTestApp() {
+    private void openTestApp() {
         getWebDriver().get(BASE_URL);
     }
 
     private WebDriver getWebDriver() {
         if (getProfileBrowserProperty().equals(CHROME_DRIVER_PROPERTY)) {
+            if (isMac()) {
+                System.setProperty(CHROMEDRIVER_PATH_PROPERTY, CHROMEDRIVER_MAC_PATH);
+            }
             driver = new ChromeDriver();
             return driver;
         }
@@ -39,6 +45,10 @@ public class BaseTest {
 
     private String getProfileBrowserProperty() {
         return System.getProperty(BROWSER_PROPERTY);
+    }
+
+    private boolean isMac() {
+        return System.getProperty(OS_NAME_PROPERTY).equals(MAC_OS_X_PLATFORM_NAME);
     }
 
     @AfterClass

@@ -72,7 +72,7 @@
                         <version>2.7.2</version>
                         <configuration>
                             <systemPropertyVariables>
-                                <webdriver.chrome.driver>src/main/resources/drivers/chromedriver.exe</webdriver.chrome.driver>
+                                <webdriver.chrome.driver>src/main/resources/drivers/win/chromedriver.exe</webdriver.chrome.driver>
                                 <browser>chrome</browser>
                             </systemPropertyVariables>
                         </configuration>
