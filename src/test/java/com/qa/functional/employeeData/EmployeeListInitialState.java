@@ -2,6 +2,7 @@ package com.qa.functional.employeeData;
 
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
+import Pages.EmployeeListPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -15,8 +16,8 @@ import org.testng.annotations.Test;
  * Expected results:
  * Following elements are displayed on the page:
  * - "Create" button
- * - "Edit" button
- * - "Delete" button
+ * - "Edit" button (Disabled by default)
+ * - "Delete" button (Disabled by default)
  * - Employee list
  * - "Logout" button
  */
@@ -24,6 +25,7 @@ import org.testng.annotations.Test;
 public class EmployeeListInitialState extends BaseTest {
 
     private LoginFragment loginFragment = new LoginFragment();
+    private EmployeeListPage employeeListPage = new EmployeeListPage();
 
     @BeforeMethod
     public void beforeMethod() {
@@ -32,6 +34,12 @@ public class EmployeeListInitialState extends BaseTest {
 
     @Test
     public void test_005() {
-        System.out.print("123");
+        employeeListPage.checkCreateButtonIsDisplayed()
+                .checkEditButtonIsDisplayed()
+                .checkDeleteButtonIsDisplayed()
+                .checkEmployeeListIsDisplayed()
+                .checkLogoutButtonIsDisplayed()
+                .checkEditButtonIsDisabled()
+                .checkDeleteButtonIsDisabled();
     }
 }
