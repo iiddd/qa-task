@@ -1,6 +1,7 @@
 package Base;
 
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 /**
  * This class is used to set before and after actions for all tests
