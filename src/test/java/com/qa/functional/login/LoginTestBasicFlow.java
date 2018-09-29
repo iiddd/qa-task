@@ -5,6 +5,9 @@ import Pages.EmployeeListPage;
 import Pages.LoginPage;
 import org.testng.annotations.Test;
 
+import static Base.Fragments.LoginFragment.LOGIN;
+import static Base.Fragments.LoginFragment.PASSWORD;
+
 /**
  * Testcase name: Login. Basic flow
  * Preconditions:
@@ -23,8 +26,6 @@ public class LoginTestBasicFlow extends BaseTest {
 
     private LoginPage loginPage = new LoginPage();
     private EmployeeListPage employeeListPage = new EmployeeListPage();
-    private static final String LOGIN = "Luke";
-    private static final String PASSWORD = "Skywalker";
 
     @Test
     public void test_002() {
