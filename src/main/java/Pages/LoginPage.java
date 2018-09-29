@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static org.testng.reporters.XMLReporterConfig.ATTR_CLASS;
 
 /**
  * This class is used to store all Login page methods
@@ -21,7 +22,6 @@ public class LoginPage extends BasePage {
     private static final By LOGIN_BUTTON_LOCATOR = By.xpath("//button[@class='main-button']");
     private static final String IS_VALID_PARTIAL_CLASSNAME = "ng-valid";
     private static final String ATTR_DISABLED = "ng-disabled";
-    private static final String ATTR_CLASS = "class";
     private static final String ERROR_MESSAGE_TEXT = "Invalid username or password!";
 
     public LoginPage inputLoginName(String inputText) {
