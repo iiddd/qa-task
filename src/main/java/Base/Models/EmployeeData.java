@@ -5,6 +5,7 @@ import java.util.Objects;
 /**
  * This class is used to store EmployeeData properties in object.
  */
+
 public class EmployeeData {
 
     private String firstName;
@@ -13,20 +14,24 @@ public class EmployeeData {
     private String email;
 
     //region setters
-    public void setFirstName(String firstName) {
+    public EmployeeData setFirstName(String firstName) {
         this.firstName = firstName;
+        return this;
     }
 
-    public void setLastName(String lastName) {
+    public EmployeeData setLastName(String lastName) {
         this.lastName = lastName;
+        return this;
     }
 
-    public void setStartDate(String startDate) {
+    public EmployeeData setStartDate(String startDate) {
         this.startDate = startDate;
+        return this;
     }
 
-    public void setEmail(String email) {
+    public EmployeeData setEmail(String email) {
         this.email = email;
+        return this;
     }
     //endregion
 
