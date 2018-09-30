@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 import static Base.Constants.ATTR_CLASS;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertFalse;
 
 /**
  * This class is used to store all Employee list page methods
@@ -72,8 +73,33 @@ public class EmployeeListPage extends BasePage {
         return this;
     }
 
+    public EmployeeListPage checkDeleteButtonIsEnabled() {
+        assertFalse(getDeleteButton().getAttribute(ATTR_CLASS).contains(DISABLED_ATTR));
+        return this;
+    }
+
+    public EmployeeListPage checkEditButtonIsEnabled() {
+        assertFalse(getEditButton().getAttribute(ATTR_CLASS).contains(DISABLED_ATTR));
+        return this;
+    }
+
     public EmployeeListPage openEmployeeProfileWithDoubleClickByPartialName(String name) {
         doubleClickByElement(getEmployeeListItemByPartialName(name));
+        return this;
+    }
+
+    public EmployeeListPage selectEmployeeProfileByPartialName(String name) {
+        (getEmployeeListItemByPartialName(name)).click();
+        return this;
+    }
+
+    public EmployeeListPage clickEditButton() {
+        getEditButton().click();
+        return this;
+    }
+
+    public EmployeeListPage clickDeleteButton() {
+        getDeleteButton().click();
         return this;
     }
 

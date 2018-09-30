@@ -15,7 +15,7 @@ import org.testng.Assert;
 public class BasePage {
 
     public static WebDriver driver;
-    private static final int TIMEOUT_1_SEC = 1000;
+    private static final int TIMEOUT_2_SEC = 2000;
     private static final int TIMEOUT_30_SECONDS = 30;
     private static final String CHROMEDRIVER_PATH_PROPERTY = "webdriver.chrome.driver";
     private static final String GECKODRIVER_PATH_PROPERTY = "webdriver.gecko.driver";
@@ -55,7 +55,7 @@ public class BasePage {
         ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver)
                 .executeScript("return document.readyState").toString().equals("complete");
         try {
-            Thread.sleep(TIMEOUT_1_SEC);
+            Thread.sleep(TIMEOUT_2_SEC);
             WebDriverWait wait = new WebDriverWait(driver, TIMEOUT_30_SECONDS);
             wait.until(expectation);
         } catch (Throwable error) {
