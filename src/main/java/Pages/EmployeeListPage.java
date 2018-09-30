@@ -1,6 +1,5 @@
 package Pages;
 
-import Base.BasePage;
 import Base.Utils.RandomUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -88,8 +87,20 @@ public class EmployeeListPage extends BasePage {
         return this;
     }
 
+    public EmployeeListPage checkEmployeeIsInTheListByPartialName(String name) {
+        WebElement employeeListItem = getEmployeeListItemByPartialName(name);
+        scrollToElementWithJS(employeeListItem);
+        assertTrue(employeeListItem.isDisplayed());
+        return this;
+    }
+
     public EmployeeListPage selectEmployeeProfileByPartialName(String name) {
         (getEmployeeListItemByPartialName(name)).click();
+        return this;
+    }
+
+    public EmployeeListPage clickCreateButton() {
+        getCreateButton().click();
         return this;
     }
 
@@ -109,8 +120,12 @@ public class EmployeeListPage extends BasePage {
 
     private void doubleClickByElement(WebElement element) {
         //Since gecko driver has issue with actions.moveToElement, I have to scroll into view with JS
-        ((JavascriptExecutor) driver).executeScript(JS_SCROLL_INTOVIEW_SCRIPT, element);
+        scrollToElementWithJS(element);
         new Actions(driver).moveToElement(element).doubleClick().perform();
+    }
+
+    private void scrollToElementWithJS(WebElement element) {
+        ((JavascriptExecutor) driver).executeScript(JS_SCROLL_INTOVIEW_SCRIPT, element);
     }
 
     private WebElement getCreateButton() {
