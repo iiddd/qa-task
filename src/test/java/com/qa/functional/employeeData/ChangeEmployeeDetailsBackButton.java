@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- * Testcase name: Employee. Change Employee details
+ * Testcase name: Employee. Change Employee details. Back
  * Preconditions:
  * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
  * - Login to app as Luke Skywalker
@@ -42,7 +42,7 @@ public class ChangeEmployeeDetailsBackButton extends BaseTest {
     }
 
     @Test
-    public void test_012() {
+    public void test_013() {
         //step 1
         employeeListPage
                 .openEmployeeProfileWithDoubleClickByPartialName(employeeData.getFirstName());

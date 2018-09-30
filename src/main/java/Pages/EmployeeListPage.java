@@ -33,7 +33,7 @@ public class EmployeeListPage extends BasePage {
     private static final String JS_SCROLL_INTOVIEW_SCRIPT = "arguments[0].scrollIntoView(true);";
 
     public EmployeeListPage checkUserIsOnEmployeeListPage() {
-        waitForPageLoaded();
+        waitForPageToLoad();
         assertEquals(driver.getCurrentUrl(), EMPLOYEE_LIST_PAGE_URL);
         return this;
     }
@@ -107,7 +107,7 @@ public class EmployeeListPage extends BasePage {
     }
 
     public EmployeeListPage selectEmployeeProfileByPartialName(String name) {
-        waitForPageLoaded();
+        waitForPageToLoad();
         (getEmployeeListItemByPartialName(name)).click();
         return this;
     }
@@ -124,7 +124,7 @@ public class EmployeeListPage extends BasePage {
 
     public EmployeeListPage clickDeleteButton() {
         getDeleteButton().click();
-        waitForPageLoaded();
+        waitForPageToLoad();
         return this;
     }
 

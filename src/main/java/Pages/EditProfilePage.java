@@ -22,7 +22,7 @@ public class EditProfilePage extends BaseProfilePage {
     private static final By BACK_BUTTON_LOCATOR = By.cssSelector(".subButton.bBack");
 
     public EditProfilePage checkUserIsOnEmployeeProfilePage() {
-        waitForPageLoaded();
+        waitForPageToLoad();
         Pattern pattern = Pattern.compile(EMPLOYEE_PROFILE_PAGE_URL_PATTERN);
         Matcher matcher = pattern.matcher(driver.getCurrentUrl());
         assertTrue(matcher.find());

@@ -35,7 +35,7 @@ import org.testng.annotations.Test;
  * - Employee successfully deleted. There is no such employee in the list
  */
 
-public class EmployeeDeleteEmployee extends BaseTest {
+public class EmployeeProfileDeleteEmployee extends BaseTest {
 
     private LoginFragment loginFragment = new LoginFragment();
     private EmployeeListFragment employeeListFragment = new EmployeeListFragment();

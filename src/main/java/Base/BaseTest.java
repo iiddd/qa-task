@@ -18,7 +18,7 @@ public class BaseTest extends BasePage {
     @BeforeClass
     public void beforeAnyTest() {
         openTestApp();
-        waitForPageLoaded();
+        waitForPageToLoad();
     }
 
     @AfterClass

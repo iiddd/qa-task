@@ -80,7 +80,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage checkErrorMessageIsDisplayed() {
-        waitForPageLoaded();
+        waitForPageToLoad();
         assertTrue(getErrorMessage().isDisplayed());
         return this;
     }

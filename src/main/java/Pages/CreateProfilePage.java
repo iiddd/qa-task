@@ -19,7 +19,7 @@ public class CreateProfilePage extends BaseProfilePage {
     private static final By ADD_BUTTON_LOCATOR = By.xpath("//button[@class='main-button'][text()='Add']");
 
     public CreateProfilePage checkUserIsOnCreateEmployeeProfilePage() {
-        waitForPageLoaded();
+        waitForPageToLoad();
         assertEquals(driver.getCurrentUrl(), CREATE_EMPLOYEE_PROFILE_PAGE_URL);
         return this;
     }
@@ -40,7 +40,7 @@ public class CreateProfilePage extends BaseProfilePage {
     }
 
     public CreateProfilePage checkAddButtonIsEnabled() {
-        waitForPageLoaded();
+        waitForPageToLoad();
         assertFalse(Boolean.valueOf(getAddButton().getAttribute(ATTR_DISABLED)));
         return this;
     }

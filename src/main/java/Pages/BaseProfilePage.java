@@ -66,26 +66,46 @@ public class BaseProfilePage<T extends BaseProfilePage> extends BasePage {
     }
 
     public T fillFirstNameField(String firstName) {
-        getFirstNameField().clear();
+        clearFirstNameField();
         getFirstNameField().sendKeys(firstName);
         return (T) this;
     }
 
     public T fillLastNameField(String firstName) {
-        getLastNameField().clear();
+        clearLastNameField();
         getLastNameField().sendKeys(firstName);
         return (T) this;
     }
 
     public T fillDateField(String firstName) {
-        getDateField().clear();
+        clearDateField();
         getDateField().sendKeys(firstName);
         return (T) this;
     }
 
     public T fillEmailField(String firstName) {
-        getEmailField().clear();
+        clearEmailField();
         getEmailField().sendKeys(firstName);
+        return (T) this;
+    }
+
+    public T clearFirstNameField() {
+        getFirstNameField().clear();
+        return (T) this;
+    }
+
+    public T clearLastNameField() {
+        getLastNameField().clear();
+        return (T) this;
+    }
+
+    public T clearDateField() {
+        getDateField().clear();
+        return (T) this;
+    }
+
+    public T clearEmailField() {
+        getEmailField().clear();
         return (T) this;
     }
 
@@ -129,7 +149,7 @@ public class BaseProfilePage<T extends BaseProfilePage> extends BasePage {
         return driver.findElement(EMAIL_FIELD_LOCATOR);
     }
 
-    public WebElement getLogoutButton() {
+    private WebElement getLogoutButton() {
         return driver.findElement(LOGOUT_BUTTON_LOCATOR);
     }
 }

@@ -51,7 +51,7 @@ public class BasePage {
         }
     }
 
-    public void waitForPageLoaded() {
+    public void waitForPageToLoad() {
         ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver)
                 .executeScript("return document.readyState").toString().equals("complete");
         try {

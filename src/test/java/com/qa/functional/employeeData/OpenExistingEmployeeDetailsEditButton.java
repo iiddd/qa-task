@@ -47,7 +47,8 @@ public class OpenExistingEmployeeDetailsEditButton extends BaseTest {
                 .checkDeleteButtonIsEnabled()
                 .checkEditButtonIsEnabled();
         //step 2
-        employeeListPage.clickEditButton();
+        employeeListPage
+                .clickEditButton();
         editProfilePage
                 .checkUserIsOnEmployeeProfilePage()
                 .checkFirstName(getRandomProfileFirstName())
