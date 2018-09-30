@@ -1,5 +1,8 @@
 package Base.Utils;
 
+import java.util.List;
+import java.util.Random;
+
 /**
  * This class is used to store random generators
  */
@@ -20,5 +23,11 @@ public class RandomUtils {
 
     public static String getRandomEmail() {
         return String.format("%s@ammail.ttt", getRandomAlphaNumeric(EMAIL_RANDOM_STRING_COUNT));
+    }
+
+    public static <P> P getRandomElementFromList(List<P> list) {
+        int size = list.size();
+        int random = new Random().nextInt(size);
+        return list.get(random);
     }
 }
