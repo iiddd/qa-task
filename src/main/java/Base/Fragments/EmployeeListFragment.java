@@ -2,6 +2,7 @@ package Base.Fragments;
 
 import Base.Models.EmployeeData;
 import Pages.CreateProfilePage;
+import Pages.EditProfilePage;
 import Pages.EmployeeListPage;
 
 /**
@@ -13,6 +14,7 @@ public class EmployeeListFragment {
     private static final String SPACE = " ";
     private EmployeeListPage employeeListPage = new EmployeeListPage();
     private CreateProfilePage createProfilePage = new CreateProfilePage();
+    private EditProfilePage editProfilePage = new EditProfilePage();
 
     public void createEmployee(EmployeeData employeeData) {
         employeeListPage.clickCreateButton();
@@ -24,6 +26,15 @@ public class EmployeeListFragment {
                 .fillEmailField(employeeData.getEmail());
         createProfilePage
                 .clickAddButton();
+    }
+
+    public void removeUserByPartialName(String name) {
+        employeeListPage
+                .openEmployeeProfileWithDoubleClickByPartialName(name);
+        editProfilePage
+                .checkUserIsOnEmployeeProfilePage()
+                .clickDeleteButton()
+                .acceptDeleteConfirmation();
     }
 
     public String getFirstNameByFullProfileName(String fullProfileName) {

@@ -2,6 +2,7 @@ package Base.Utils;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * This class is used to store random generators
@@ -29,5 +30,10 @@ public class RandomUtils {
         int size = list.size();
         int random = new Random().nextInt(size);
         return list.get(random);
+    }
+
+    public static int getRandomNumericInRange(int min, int max) {
+        //inclusive
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 }

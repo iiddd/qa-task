@@ -64,5 +64,4 @@ public class EmployeeListDeleteEmployee extends BaseTest {
                 .acceptDeleteConfirmation()
                 .checkEmployeeIsAbsentInListByPartialName(FIRST_NAME);
     }
-
 }

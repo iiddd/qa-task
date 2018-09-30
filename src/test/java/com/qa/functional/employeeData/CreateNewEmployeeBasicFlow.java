@@ -1,12 +1,14 @@
 package com.qa.functional.employeeData;
 
 import Base.BaseTest;
+import Base.Fragments.EmployeeListFragment;
 import Base.Fragments.LoginFragment;
 import Base.Models.EmployeeData;
 import Base.Models.EmployeeDataBuilder;
 import Pages.CreateProfilePage;
 import Pages.EditProfilePage;
 import Pages.EmployeeListPage;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -49,6 +51,7 @@ import static Base.Constants.EMPTY_STRING;
 public class CreateNewEmployeeBasicFlow extends BaseTest {
 
     private LoginFragment loginFragment = new LoginFragment();
+    private EmployeeListFragment employeeListFragment = new EmployeeListFragment();
     private EmployeeListPage employeeListPage = new EmployeeListPage();
     private CreateProfilePage createProfilePage = new CreateProfilePage();
     private EditProfilePage editProfilePage = new EditProfilePage();
@@ -100,5 +103,10 @@ public class CreateNewEmployeeBasicFlow extends BaseTest {
         editProfilePage
                 .checkUserIsOnEmployeeProfilePage()
                 .checkEmployeeDataIsEquals(employeeData);
+    }
+
+    @AfterMethod
+    public void removeCreatedUser() {
+        employeeListFragment.removeUserByPartialName(employeeData.getFirstName());
     }
 }

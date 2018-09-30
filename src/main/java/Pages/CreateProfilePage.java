@@ -65,6 +65,16 @@ public class CreateProfilePage extends BaseProfilePage {
         return this;
     }
 
+    public CreateProfilePage checkEmailFieldIsInvalid() {
+        assertTrue(getEmailField().getAttribute(ATTR_CLASS).contains(IS_INVALID_PARTIAL_CLASSNAME));
+        return this;
+    }
+
+    public CreateProfilePage checkDateFieldIsInvalid() {
+        assertTrue(getDateField().getAttribute(ATTR_CLASS).contains(IS_INVALID_PARTIAL_CLASSNAME));
+        return this;
+    }
+
     public CreateProfilePage clickAddButton() {
         getAddButton().click();
         return this;

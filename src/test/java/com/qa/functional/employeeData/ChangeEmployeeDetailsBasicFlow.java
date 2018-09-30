@@ -7,6 +7,7 @@ import Base.Models.EmployeeData;
 import Base.Models.EmployeeDataBuilder;
 import Pages.EditProfilePage;
 import Pages.EmployeeListPage;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -57,5 +58,10 @@ public class ChangeEmployeeDetailsBasicFlow extends BaseTest {
                 .checkUserIsOnEmployeeListPage()
                 .checkEmployeeIsAbsentInListByPartialName(employeeData.getFirstName())
                 .checkEmployeeIsInTheListByPartialName(updatedEmployeeData.getFirstName());
+    }
+
+    @AfterMethod
+    public void removeCreatedUser() {
+        employeeListFragment.removeUserByPartialName(employeeData.getFirstName());
     }
 }
