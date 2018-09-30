@@ -21,7 +21,7 @@ public class EditProfilePage extends BaseProfilePage {
     private static final By DELETE_BUTTON_LOCATOR = By.xpath("//p[@class='main-button'][text()='Delete']");
     private static final By BACK_BUTTON_LOCATOR = By.cssSelector(".subButton.bBack");
 
-    public EditProfilePage checkUserIsOnEmployeeProfilePage() {
+    public EditProfilePage checkUserIsOnEditProfilePage() {
         waitForPageToLoad();
         Pattern pattern = Pattern.compile(EMPLOYEE_PROFILE_PAGE_URL_PATTERN);
         Matcher matcher = pattern.matcher(driver.getCurrentUrl());

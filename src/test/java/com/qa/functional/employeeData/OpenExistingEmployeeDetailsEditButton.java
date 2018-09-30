@@ -31,12 +31,12 @@ public class OpenExistingEmployeeDetailsEditButton extends BaseTest {
     private EmployeeListPage employeeListPage = new EmployeeListPage();
     private EditProfilePage editProfilePage = new EditProfilePage();
     private EmployeeListFragment employeeListFragment = new EmployeeListFragment();
-    private String RANDOM_EMPLOYEE_FULL_PROFILE_NAME;
+    private String PROFILE_NAME;
 
     @BeforeMethod
     public void beforeMethod() {
         loginFragment.loginToApp();
-        RANDOM_EMPLOYEE_FULL_PROFILE_NAME = employeeListPage.getRandomEmployeeListProfileName();
+        PROFILE_NAME = employeeListPage.getRandomEmployeeListProfileName();
     }
 
     @Test
@@ -50,20 +50,20 @@ public class OpenExistingEmployeeDetailsEditButton extends BaseTest {
         employeeListPage
                 .clickEditButton();
         editProfilePage
-                .checkUserIsOnEmployeeProfilePage()
+                .checkUserIsOnEditProfilePage()
                 .checkFirstName(getRandomProfileFirstName())
                 .checkLastName(getRandomProfileLastName());
     }
 
     private void selectRandomProfile() {
-        employeeListPage.selectEmployeeProfileByPartialName(RANDOM_EMPLOYEE_FULL_PROFILE_NAME);
+        employeeListPage.selectEmployeeProfileByPartialName(PROFILE_NAME);
     }
 
     private String getRandomProfileFirstName() {
-        return employeeListFragment.getFirstNameByFullProfileName(RANDOM_EMPLOYEE_FULL_PROFILE_NAME);
+        return employeeListFragment.getFirstNameByFullProfileName(PROFILE_NAME);
     }
 
     private String getRandomProfileLastName() {
-        return employeeListFragment.getLastNameByFullProfileName(RANDOM_EMPLOYEE_FULL_PROFILE_NAME);
+        return employeeListFragment.getLastNameByFullProfileName(PROFILE_NAME);
     }
 }

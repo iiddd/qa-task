@@ -4,6 +4,7 @@ import Base.Models.EmployeeData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static Base.Constants.ATTR_VALUE;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -13,17 +14,10 @@ import static org.testng.Assert.assertTrue;
 
 public class BaseProfilePage<T extends BaseProfilePage> extends BasePage {
 
-    private static final By LOGOUT_BUTTON_LOCATOR = By.xpath("//p[@class='main-button'][text()='Logout']");
     private static final By FIRST_NAME_FIELD_LOCATOR = By.xpath("//span[text()='First name:']/following-sibling::input");
     private static final By LAST_NAME_FIELD_LOCATOR = By.xpath("//span[text()='Last name:']/following-sibling::input");
     private static final By DATE_FIELD_LOCATOR = By.xpath("//span[text()='Start date:']/following-sibling::input");
     private static final By EMAIL_FIELD_LOCATOR = By.xpath("//span[text()='Email:']/following-sibling::input");
-    private static final String ATTR_VALUE = "value";
-
-    public T checkLogoutButtonIsDisplayed() {
-        assertTrue(getLogoutButton().isDisplayed());
-        return (T) this;
-    }
 
     public T checkFirstName(String firstName) {
         assertEquals(getEmployeeData().getFirstName(), firstName);
@@ -147,9 +141,5 @@ public class BaseProfilePage<T extends BaseProfilePage> extends BasePage {
 
     public WebElement getEmailField() {
         return driver.findElement(EMAIL_FIELD_LOCATOR);
-    }
-
-    private WebElement getLogoutButton() {
-        return driver.findElement(LOGOUT_BUTTON_LOCATOR);
     }
 }

@@ -13,15 +13,29 @@ public class EmployeeData {
     private String startDate;
     private String email;
 
+    //region getters
+    public String getFirstName() {
+        return firstName;
+    }
+
     //region setters
     public EmployeeData setFirstName(String firstName) {
         this.firstName = firstName;
         return this;
     }
 
+    public String getLastName() {
+        return lastName;
+    }
+
     public EmployeeData setLastName(String lastName) {
         this.lastName = lastName;
         return this;
+    }
+    //endregion
+
+    public String getStartDate() {
+        return startDate;
     }
 
     public EmployeeData setStartDate(String startDate) {
@@ -29,27 +43,13 @@ public class EmployeeData {
         return this;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public EmployeeData setEmail(String email) {
         this.email = email;
         return this;
-    }
-    //endregion
-
-    //region getters
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public String getEmail() {
-        return email;
     }
     //endregion
 

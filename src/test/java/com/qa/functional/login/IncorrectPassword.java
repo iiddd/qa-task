@@ -17,9 +17,9 @@ import org.testng.annotations.Test;
 
 public class IncorrectPassword extends BaseTest {
 
-    private LoginPage loginPage = new LoginPage();
     private static final String LOGIN = "Luke";
     private static final String PASSWORD = "Skywalker1";
+    private LoginPage loginPage = new LoginPage();
 
     @Test
     public void test_004() {

@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import static Base.Constants.ATTR_CLASS;
+import static Base.Constants.EMPLOYEE_LIST_PAGE_URL;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertFalse;
@@ -27,7 +28,6 @@ public class EmployeeListPage extends BasePage {
     private static final By DELETE_BUTTON_LOCATOR = By.id("bDelete");
     private static final By EMPLOYEE_LIST_LOCATOR = By.id("employee-list");
     private static final By EMPLOYEE_LIST_ITEM_LOCATOR = By.xpath("//li[@ng-repeat='employee in employees']");
-    private static final String EMPLOYEE_LIST_PAGE_URL = "http://cafetownsend-angular-rails.herokuapp.com/employees";
     private static final String SEARCH_EMPLOYEE_BY_NAME_ERROR_MESSAGE = "More than one or no employee list items with such name were found";
     private static final String DISABLED_ATTR = "disabled";
     private static final String JS_SCROLL_INTOVIEW_SCRIPT = "arguments[0].scrollIntoView(true);";

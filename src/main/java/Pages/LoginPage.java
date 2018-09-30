@@ -20,6 +20,7 @@ public class LoginPage extends BasePage {
     private static final By ERROR_MESSAGE_LOCATOR = By.cssSelector(".error-message");
     private static final By LOGIN_BUTTON_LOCATOR = By.xpath("//button[@class='main-button']");
     private static final String ERROR_MESSAGE_TEXT = "Invalid username or password!";
+    private static final String LOGIN_PAGE_URL = "http://cafetownsend-angular-rails.herokuapp.com/login";
     private static final String JS_CLICK_SCRIPT = "arguments[0].click()";
 
     public LoginPage inputLoginName(String inputText) {
@@ -82,6 +83,22 @@ public class LoginPage extends BasePage {
     public LoginPage checkErrorMessageIsDisplayed() {
         waitForPageToLoad();
         assertTrue(getErrorMessage().isDisplayed());
+        return this;
+    }
+
+    public LoginPage checkUserIsOnLoginPage() {
+        waitForPageToLoad();
+        assertEquals(driver.getCurrentUrl(), LOGIN_PAGE_URL);
+        return this;
+    }
+
+    public LoginPage checkUserNameFieldIsEmpty() {
+        assertEquals(getUserNameField().getAttribute(ATTR_VALUE), EMPTY_STRING);
+        return this;
+    }
+
+    public LoginPage checkPasswordFieldIsEmpty() {
+        assertEquals(getPasswordField().getAttribute(ATTR_VALUE), EMPTY_STRING);
         return this;
     }
 

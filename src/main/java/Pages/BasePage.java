@@ -14,7 +14,6 @@ import org.testng.Assert;
 
 public class BasePage {
 
-    public static WebDriver driver;
     private static final int TIMEOUT_3_SEC = 3000;
     private static final int TIMEOUT_30_SECONDS = 30;
     private static final String CHROMEDRIVER_PATH_PROPERTY = "webdriver.chrome.driver";
@@ -26,6 +25,7 @@ public class BasePage {
     private static final String BROWSER_PROPERTY = "browser";
     private static final String FF_DRIVER_PROPERTY = "gecko";
     private static final String CHROME_DRIVER_PROPERTY = "chrome";
+    public static WebDriver driver;
 
     public WebDriver getWebDriver() {
         if (getProfileBrowserProperty().equals(CHROME_DRIVER_PROPERTY)) {

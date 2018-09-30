@@ -56,7 +56,7 @@ public class EmployeeProfileDeleteEmployee extends BaseTest {
         employeeListPage
                 .openEmployeeProfileWithDoubleClickByPartialName(FIRST_NAME);
         editProfilePage
-                .checkUserIsOnEmployeeProfilePage()
+                .checkUserIsOnEditProfilePage()
                 .clickDeleteButton()
                 .checkDeletePopUpTextByEmployeeData(employeeData);
         //step 2

@@ -75,7 +75,8 @@ public class CreateNewEmployeeBasicFlow extends BaseTest {
                 .checkDateFieldIsDisplayed()
                 .checkStartDate(EMPTY_STRING)
                 .checkEmailFieldIsDisplayed()
-                .checkEmailAddress(EMPTY_STRING)
+                .checkEmailAddress(EMPTY_STRING);
+        loginFragment
                 .checkLogoutButtonIsDisplayed();
         createProfilePage
                 .checkAddButtonIsDisplayed()
@@ -101,7 +102,7 @@ public class CreateNewEmployeeBasicFlow extends BaseTest {
         //step 4
         employeeListPage.openEmployeeProfileWithDoubleClickByPartialName(employeeData.getFirstName());
         editProfilePage
-                .checkUserIsOnEmployeeProfilePage()
+                .checkUserIsOnEditProfilePage()
                 .checkEmployeeDataIsEquals(employeeData);
     }
 

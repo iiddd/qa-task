@@ -32,7 +32,7 @@ public class EmployeeListFragment {
         employeeListPage
                 .openEmployeeProfileWithDoubleClickByPartialName(name);
         editProfilePage
-                .checkUserIsOnEmployeeProfilePage()
+                .checkUserIsOnEditProfilePage()
                 .clickDeleteButton()
                 .acceptDeleteConfirmation();
     }
