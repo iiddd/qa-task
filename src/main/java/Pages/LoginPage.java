@@ -1,12 +1,11 @@
 package Pages;
 
-import Base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 
-import static Base.Constants.ATTR_CLASS;
+import static Base.Constants.*;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -20,8 +19,6 @@ public class LoginPage extends BasePage {
     private static final By PASSWORD_FIELD_LOCATOR = By.xpath("//span[text()='Password*']/following-sibling::input");
     private static final By ERROR_MESSAGE_LOCATOR = By.cssSelector(".error-message");
     private static final By LOGIN_BUTTON_LOCATOR = By.xpath("//button[@class='main-button']");
-    private static final String IS_VALID_PARTIAL_CLASSNAME = "ng-valid";
-    private static final String ATTR_DISABLED = "ng-disabled";
     private static final String ERROR_MESSAGE_TEXT = "Invalid username or password!";
     private static final String JS_CLICK_SCRIPT = "arguments[0].click()";
 
