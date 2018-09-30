@@ -75,30 +75,6 @@ public class CreateProfilePage extends BaseProfilePage {
         return this;
     }
 
-    public CreateProfilePage fillFirstNameField(String firstName) {
-        getFirstNameField().clear();
-        getFirstNameField().sendKeys(firstName);
-        return this;
-    }
-
-    public CreateProfilePage fillLastNameField(String firstName) {
-        getLastNameField().clear();
-        getLastNameField().sendKeys(firstName);
-        return this;
-    }
-
-    public CreateProfilePage fillDateField(String firstName) {
-        getDateField().clear();
-        getDateField().sendKeys(firstName);
-        return this;
-    }
-
-    public CreateProfilePage fillEmailField(String firstName) {
-        getEmailField().clear();
-        getEmailField().sendKeys(firstName);
-        return this;
-    }
-
     private WebElement getCancelButton() {
         return driver.findElement(CANCEL_BUTTON_LOCATOR);
     }

@@ -65,6 +65,30 @@ public class BaseProfilePage<T extends BaseProfilePage> extends BasePage {
         return (T) this;
     }
 
+    public T fillFirstNameField(String firstName) {
+        getFirstNameField().clear();
+        getFirstNameField().sendKeys(firstName);
+        return (T) this;
+    }
+
+    public T fillLastNameField(String firstName) {
+        getLastNameField().clear();
+        getLastNameField().sendKeys(firstName);
+        return (T) this;
+    }
+
+    public T fillDateField(String firstName) {
+        getDateField().clear();
+        getDateField().sendKeys(firstName);
+        return (T) this;
+    }
+
+    public T fillEmailField(String firstName) {
+        getEmailField().clear();
+        getEmailField().sendKeys(firstName);
+        return (T) this;
+    }
+
     public EmployeeData getEmployeeData() {
         return new EmployeeData()
                 .setFirstName(getEmployeeProfileFirstName())

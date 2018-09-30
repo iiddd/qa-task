@@ -34,14 +34,19 @@ public class EditProfilePage extends BaseProfilePage {
         return this;
     }
 
+    public EditProfilePage checkDeletePopUpTextByEmployeeData(EmployeeData employeeData) {
+        String expectedText = String.format("Are you sure you want to delete %s %s?", employeeData.getFirstName(), employeeData.getLastName());
+        assertEquals(driver.switchTo().alert().getText(), expectedText);
+        return this;
+    }
+
     public EditProfilePage clickDeleteButton() {
         getDeleteButton().click();
         return this;
     }
 
-    public EditProfilePage checkDeletePopUpTextByEmployeeData(EmployeeData employeeData) {
-        String expectedText = String.format("Are you sure you want to delete %s %s?", employeeData.getFirstName(), employeeData.getLastName());
-        assertEquals(driver.switchTo().alert().getText(), expectedText);
+    public EditProfilePage clickUpdateButton() {
+        getUpdateButton().click();
         return this;
     }
 

@@ -83,7 +83,8 @@ public class CreateNewEmployeeBasicFlow extends BaseTest {
                 .fillFirstNameField(employeeData.getFirstName())
                 .fillLastNameField(employeeData.getLastName())
                 .fillDateField(employeeData.getStartDate())
-                .fillEmailField(employeeData.getEmail())
+                .fillEmailField(employeeData.getEmail());
+        createProfilePage
                 .checkAddButtonIsEnabled()
                 .checkFirstNameFieldIsValid()
                 .checkLastNameFieldIsValid()
