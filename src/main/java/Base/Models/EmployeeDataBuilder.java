@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class EmployeeDataBuilder {
 
-    private static final int RANDOM_COUNT = 3;
+    private static final int RANDOM_COUNT = 6;
     private static final String DATE_PATTERN = "yyyy-MM-dd";
 
     private String firstName = String.format("AM_fName%s", RandomUtils.getRandomAlphaNumeric(RANDOM_COUNT));

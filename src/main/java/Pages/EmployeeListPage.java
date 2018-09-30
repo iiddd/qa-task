@@ -97,8 +97,6 @@ public class EmployeeListPage extends BasePage {
     }
 
     public EmployeeListPage checkEmployeeIsAbsentInListByPartialName(String name) {
-        //waiting for delete
-        waitForSomeTime(2000);
         assertTrue(getEmployeeListByPartialName(name).size() < 1);
         return this;
     }
@@ -137,6 +135,8 @@ public class EmployeeListPage extends BasePage {
 
     public EmployeeListPage acceptDeleteConfirmation() {
         driver.switchTo().alert().accept();
+        //waiting for delete
+        waitForSomeTime(2000);
         return this;
     }
 

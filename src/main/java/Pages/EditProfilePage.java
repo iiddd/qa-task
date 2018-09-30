@@ -16,10 +16,10 @@ import static org.testng.Assert.assertTrue;
 
 public class EditProfilePage extends BaseProfilePage {
 
-
     private static final String EMPLOYEE_PROFILE_PAGE_URL_PATTERN = "(http://cafetownsend-angular-rails.herokuapp.com/employees/)+([0-9]+)+/edit";
     private static final By UPDATE_BUTTON_LOCATOR = By.xpath("//button[@class='main-button']");
     private static final By DELETE_BUTTON_LOCATOR = By.xpath("//p[@class='main-button'][text()='Delete']");
+    private static final By BACK_BUTTON_LOCATOR = By.cssSelector(".subButton.bBack");
 
     public EditProfilePage checkUserIsOnEmployeeProfilePage() {
         waitForPageLoaded();
@@ -50,6 +50,11 @@ public class EditProfilePage extends BaseProfilePage {
         return this;
     }
 
+    public EditProfilePage clickBackButton() {
+        getBackButton().click();
+        return this;
+    }
+
     public EditProfilePage declineDeleteConfirmation() {
         driver.switchTo().alert().dismiss();
         return this;
@@ -66,5 +71,9 @@ public class EditProfilePage extends BaseProfilePage {
 
     private WebElement getDeleteButton() {
         return driver.findElement(DELETE_BUTTON_LOCATOR);
+    }
+
+    private WebElement getBackButton() {
+        return driver.findElement(BACK_BUTTON_LOCATOR);
     }
 }
