@@ -94,6 +94,11 @@ public class EmployeeListPage extends BasePage {
         return this;
     }
 
+    public EmployeeListPage checkEmployeeIsAbsentInListByPartialName(String name) {
+        assertTrue(getEmployeeListByPartialName(name).size() < 1);
+        return this;
+    }
+
     public EmployeeListPage selectEmployeeProfileByPartialName(String name) {
         (getEmployeeListItemByPartialName(name)).click();
         return this;
@@ -145,14 +150,18 @@ public class EmployeeListPage extends BasePage {
     }
 
     private WebElement getEmployeeListItemByPartialName(String name) {
-        List<WebElement> resultList = getListOfEmployee()
-                .stream()
-                .filter(employeeElement -> employeeElement.getText().contains(name))
-                .collect(Collectors.toList());
+        List<WebElement> resultList = getEmployeeListByPartialName(name);
         if (resultList.size() == 0 || resultList.size() > 1) {
             Logger.getGlobal().info(SEARCH_EMPLOYEE_BY_NAME_ERROR_MESSAGE);
         }
         return resultList.get(0);
+    }
+
+    private List<WebElement> getEmployeeListByPartialName(String name) {
+        return getListOfEmployee()
+                .stream()
+                .filter(employeeElement -> employeeElement.getText().contains(name))
+                .collect(Collectors.toList());
     }
 
     private List<WebElement> getListOfEmployee() {

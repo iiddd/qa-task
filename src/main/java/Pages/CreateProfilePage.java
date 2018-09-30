@@ -70,6 +70,11 @@ public class CreateProfilePage extends BaseProfilePage {
         return this;
     }
 
+    public CreateProfilePage clickCancelButton() {
+        getCancelButton().click();
+        return this;
+    }
+
     public CreateProfilePage fillFirstNameField(String firstName) {
         getFirstNameField().clear();
         getFirstNameField().sendKeys(firstName);

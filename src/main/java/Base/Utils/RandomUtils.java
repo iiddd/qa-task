@@ -10,7 +10,7 @@ import java.util.Random;
 public class RandomUtils {
 
     private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    private static final int EMAIL_RANDOM_STRING_COUNT = 7;
+    private static final int EMAIL_RANDOM_STRING_COUNT = 12;
 
     public static String getRandomAlphaNumeric(int count) {
         StringBuilder builder = new StringBuilder();
