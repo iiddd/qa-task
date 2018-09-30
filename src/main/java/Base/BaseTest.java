@@ -1,8 +1,11 @@
 package Base;
 
 import Pages.BasePage;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * This class is used to set before and after actions for all tests
@@ -26,6 +29,8 @@ public class BaseTest extends BasePage {
     }
 
     private void openTestApp() {
-        getWebDriver().get(BASE_URL);
+        WebDriver driver = getWebDriver();
+        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+        driver.get(BASE_URL);
     }
 }

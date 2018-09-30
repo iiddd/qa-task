@@ -63,6 +63,14 @@ public class BasePage {
         }
     }
 
+    // this wait is needed in case it's uncomfortable to use conditions
+    public void waitForSomeTime(int millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (Throwable error) {
+        }
+    }
+
     private String getProfileBrowserProperty() {
         return System.getProperty(BROWSER_PROPERTY);
     }

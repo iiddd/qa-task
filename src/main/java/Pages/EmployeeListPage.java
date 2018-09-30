@@ -1,5 +1,6 @@
 package Pages;
 
+import Base.Models.EmployeeData;
 import Base.Utils.RandomUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -34,6 +35,12 @@ public class EmployeeListPage extends BasePage {
     public EmployeeListPage checkUserIsOnEmployeeListPage() {
         waitForPageLoaded();
         assertEquals(driver.getCurrentUrl(), EMPLOYEE_LIST_PAGE_URL);
+        return this;
+    }
+
+    public EmployeeListPage checkDeletePopUpTextByEmployeeData(EmployeeData employeeData) {
+        String expectedText = String.format("Are you sure you want to delete %s %s?", employeeData.getFirstName(), employeeData.getLastName());
+        assertEquals(driver.switchTo().alert().getText(), expectedText);
         return this;
     }
 
@@ -82,11 +89,6 @@ public class EmployeeListPage extends BasePage {
         return this;
     }
 
-    public EmployeeListPage openEmployeeProfileWithDoubleClickByPartialName(String name) {
-        doubleClickByElement(getEmployeeListItemByPartialName(name));
-        return this;
-    }
-
     public EmployeeListPage checkEmployeeIsInTheListByPartialName(String name) {
         WebElement employeeListItem = getEmployeeListItemByPartialName(name);
         scrollToElementWithJS(employeeListItem);
@@ -95,11 +97,19 @@ public class EmployeeListPage extends BasePage {
     }
 
     public EmployeeListPage checkEmployeeIsAbsentInListByPartialName(String name) {
+        //waiting for delete
+        waitForSomeTime(2000);
         assertTrue(getEmployeeListByPartialName(name).size() < 1);
         return this;
     }
 
+    public EmployeeListPage openEmployeeProfileWithDoubleClickByPartialName(String name) {
+        doubleClickByElement(getEmployeeListItemByPartialName(name));
+        return this;
+    }
+
     public EmployeeListPage selectEmployeeProfileByPartialName(String name) {
+        waitForPageLoaded();
         (getEmployeeListItemByPartialName(name)).click();
         return this;
     }
@@ -116,6 +126,17 @@ public class EmployeeListPage extends BasePage {
 
     public EmployeeListPage clickDeleteButton() {
         getDeleteButton().click();
+        waitForPageLoaded();
+        return this;
+    }
+
+    public EmployeeListPage declineDeleteConfirmation() {
+        driver.switchTo().alert().dismiss();
+        return this;
+    }
+
+    public EmployeeListPage acceptDeleteConfirmation() {
+        driver.switchTo().alert().accept();
         return this;
     }
 

@@ -1,5 +1,9 @@
 package Base.Fragments;
 
+import Base.Models.EmployeeData;
+import Pages.CreateProfilePage;
+import Pages.EmployeeListPage;
+
 /**
  * This class is used to store common methods for Employee list tests
  */
@@ -7,8 +11,18 @@ package Base.Fragments;
 public class EmployeeListFragment {
 
     private static final String SPACE = " ";
+    private EmployeeListPage employeeListPage = new EmployeeListPage();
+    private CreateProfilePage createProfilePage = new CreateProfilePage();
 
-    public void createEmployee() {
+    public void createEmployee(EmployeeData employeeData) {
+        employeeListPage.clickCreateButton();
+        createProfilePage
+                .checkUserIsOnCreateEmployeeProfilePage()
+                .fillFirstNameField(employeeData.getFirstName())
+                .fillLastNameField(employeeData.getLastName())
+                .fillDateField(employeeData.getStartDate())
+                .fillEmailField(employeeData.getEmail())
+                .clickAddButton();
     }
 
     public String getFirstNameByFullProfileName(String fullProfileName) {
