@@ -35,7 +35,7 @@ public class EmployeeOpenExistingEmployeeDetailsDoubleClick extends BaseTest {
     }
 
     @Test
-    public void test_005() {
+    public void test_006() {
 
         //step 1
         openRandomProfile();

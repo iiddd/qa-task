@@ -34,6 +34,7 @@ public class EmployeeListInitialState extends BaseTest {
 
     @Test
     public void test_005() {
+        //step 1
         employeeListPage.checkCreateButtonIsDisplayed()
                 .checkEditButtonIsDisplayed()
                 .checkDeleteButtonIsDisplayed()
