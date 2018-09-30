@@ -1,12 +1,19 @@
 package Pages;
 
 import Base.BasePage;
+import Base.Utils.RandomUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
+import java.util.List;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+
+import static Base.Constants.ATTR_CLASS;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-import static org.testng.reporters.XMLReporterConfig.ATTR_CLASS;
 
 /**
  * This class is used to store all Employee list page methods
@@ -14,11 +21,15 @@ import static org.testng.reporters.XMLReporterConfig.ATTR_CLASS;
 
 public class EmployeeListPage extends BasePage {
 
-    private static final String EMPLOYEE_LIST_PAGE_URL = "http://cafetownsend-angular-rails.herokuapp.com/employees";
     private static final By CREATE_BUTTON_LOCATOR = By.id("bAdd");
     private static final By EDIT_BUTTON_LOCATOR = By.id("bEdit");
     private static final By DELETE_BUTTON_LOCATOR = By.id("bDelete");
     private static final By EMPLOYEE_LIST_LOCATOR = By.id("employee-list");
+    private static final By EMPLOYEE_LIST_ITEM_LOCATOR = By.xpath("//li[@ng-repeat='employee in employees']");
+    private static final String EMPLOYEE_LIST_PAGE_URL = "http://cafetownsend-angular-rails.herokuapp.com/employees";
+    private static final String SEARCH_EMPLOYEE_BY_NAME_ERROR_MESSAGE = "More than one or no employee list items with such name were found";
+    private static final String DISABLED_ATTR = "disabled";
+    private static final String JS_SCROLL_INTOVIEW_SCRIPT = "arguments[0].scrollIntoView(true);";
 
     public EmployeeListPage checkUserIsOnEmployeeListPage() {
         waitForPageLoaded();
@@ -52,13 +63,28 @@ public class EmployeeListPage extends BasePage {
     }
 
     public EmployeeListPage checkEditButtonIsDisabled() {
-        assertTrue(getEditButton().getAttribute(ATTR_CLASS).contains("disabled"));
+        assertTrue(getEditButton().getAttribute(ATTR_CLASS).contains(DISABLED_ATTR));
         return this;
     }
 
     public EmployeeListPage checkDeleteButtonIsDisabled() {
-        assertTrue(getDeleteButton().getAttribute(ATTR_CLASS).contains("disabled"));
+        assertTrue(getDeleteButton().getAttribute(ATTR_CLASS).contains(DISABLED_ATTR));
         return this;
+    }
+
+    public EmployeeListPage openEmployeeProfileWithDoubleClickByPartialName(String name) {
+        doubleClickByElement(getEmployeeListItemByPartialName(name));
+        return this;
+    }
+
+    public String getRandomEmployeeListProfileName() {
+        return RandomUtils.getRandomElementFromList(getListOfEmployee()).getText();
+    }
+
+    private void doubleClickByElement(WebElement element) {
+        //Since gecko driver has issue with actions.moveToElement, I have to scroll into view with JS
+        ((JavascriptExecutor) driver).executeScript(JS_SCROLL_INTOVIEW_SCRIPT, element);
+        new Actions(driver).moveToElement(element).doubleClick().perform();
     }
 
     private WebElement getCreateButton() {
@@ -75,5 +101,20 @@ public class EmployeeListPage extends BasePage {
 
     private WebElement getEmployeeListElement() {
         return driver.findElement(EMPLOYEE_LIST_LOCATOR);
+    }
+
+    private WebElement getEmployeeListItemByPartialName(String name) {
+        List<WebElement> resultList = getListOfEmployee()
+                .stream()
+                .filter(employeeElement -> employeeElement.getText().contains(name))
+                .collect(Collectors.toList());
+        if (resultList.size() == 0 || resultList.size() > 1) {
+            Logger.getGlobal().info(SEARCH_EMPLOYEE_BY_NAME_ERROR_MESSAGE);
+        }
+        return resultList.get(0);
+    }
+
+    private List<WebElement> getListOfEmployee() {
+        return driver.findElements(EMPLOYEE_LIST_ITEM_LOCATOR);
     }
 }
