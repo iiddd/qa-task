@@ -22,7 +22,7 @@ import static Base.Fragments.LoginFragment.PASSWORD;
  * User is redirected to Employee list page
  */
 
-public class LoginTestBasicFlow extends BaseTest {
+public class LoginBasicFlow extends BaseTest {
 
     private LoginPage loginPage = new LoginPage();
     private EmployeeListPage employeeListPage = new EmployeeListPage();

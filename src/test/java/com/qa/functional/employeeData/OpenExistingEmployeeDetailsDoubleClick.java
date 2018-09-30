@@ -20,7 +20,7 @@ import org.testng.annotations.Test;
  * - Employee first name and last name are the same as in the list
  */
 
-public class EmployeeOpenExistingEmployeeDetailsDoubleClick extends BaseTest {
+public class OpenExistingEmployeeDetailsDoubleClick extends BaseTest {
 
     private LoginFragment loginFragment = new LoginFragment();
     private EmployeeListPage employeeListPage = new EmployeeListPage();

@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
  * "Login" button is disabled
  */
 
-public class LoginTestInitialState extends BaseTest {
+public class LoginInitialState extends BaseTest {
 
     private LoginPage loginPage = new LoginPage();
 

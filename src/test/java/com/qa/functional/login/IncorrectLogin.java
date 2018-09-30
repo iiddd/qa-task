@@ -5,24 +5,24 @@ import Pages.LoginPage;
 import org.testng.annotations.Test;
 
 /**
- * Testcase name: Login. Incorrect Password
+ * Testcase name: Login. Incorrect Login
  * Preconditions:
  * Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
  * Step 1:
- * - Enter correct login and incorrect password
+ * - Enter incorrect login and correct password
  * - Click "Submit" button
  * Expected results:
  * Error message with following text is displayed "Invalid username or password!"
  */
 
-public class LoginTestIncorrectPassword extends BaseTest {
+public class IncorrectLogin extends BaseTest {
 
     private LoginPage loginPage = new LoginPage();
-    private static final String LOGIN = "Luke";
-    private static final String PASSWORD = "Skywalker1";
+    private static final String LOGIN = "Luke1";
+    private static final String PASSWORD = "Skywalker";
 
     @Test
-    public void test_004() {
+    public void test_003() {
         //step 1
         loginPage
                 .inputLoginName(LOGIN)
