@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
  * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
  * - Login to app as Luke Skywalker
  * Step 1:
- * Open Any Employee details
+ * Open Any Employee details using double click
  * Expected results:
  * - Employee details page is opened
  * - Employee first name and last name are the same as in the list
@@ -36,10 +36,10 @@ public class EmployeeOpenExistingEmployeeDetailsDoubleClick extends BaseTest {
 
     @Test
     public void test_006() {
-
         //step 1
         openRandomProfile();
-        employeeProfilePage.checkUserIsOnEmployeeProfilePage()
+        employeeProfilePage
+                .checkUserIsOnEmployeeProfilePage()
                 .checkFirstName(getRandomProfileFirstName())
                 .checkLastName(getRandomProfileLastName());
     }

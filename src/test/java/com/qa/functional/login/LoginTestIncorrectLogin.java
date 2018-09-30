@@ -24,7 +24,8 @@ public class LoginTestIncorrectLogin extends BaseTest {
     @Test
     public void test_003() {
         //step 1
-        loginPage.inputLoginName(LOGIN)
+        loginPage
+                .inputLoginName(LOGIN)
                 .inputPassword(PASSWORD)
                 .clickLoginButton()
                 .checkErrorMessageIsDisplayed()

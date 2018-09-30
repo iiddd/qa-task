@@ -28,7 +28,8 @@ public class LoginTestInitialState extends BaseTest {
     @Test
     public void test_001() {
         //step 1
-        loginPage.checkLoginFieldIsDisplayed()
+        loginPage
+                .checkLoginFieldIsDisplayed()
                 .checkPasswordFieldIsDisplayed()
                 .checkLoginButtonIsDisplayed();
         //step 2

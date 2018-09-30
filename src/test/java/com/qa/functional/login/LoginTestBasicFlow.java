@@ -30,7 +30,8 @@ public class LoginTestBasicFlow extends BaseTest {
     @Test
     public void test_002() {
         //step 1
-        loginPage.inputLoginName(LOGIN)
+        loginPage
+                .inputLoginName(LOGIN)
                 .inputPassword(PASSWORD)
                 .checkUserNameFieldIsValid()
                 .checkPasswordFieldIsValid();
