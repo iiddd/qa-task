@@ -5,5 +5,5 @@ package Base;
  */
 
 public class Constants {
-    private static final String ATTR_CLASS = "class";
+    public static final String ATTR_CLASS = "class";
 }
