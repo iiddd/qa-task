@@ -3,8 +3,8 @@ package com.qa.functional.employeeData;
 import Base.BaseTest;
 import Base.Fragments.EmployeeListFragment;
 import Base.Fragments.LoginFragment;
+import Pages.EditProfilePage;
 import Pages.EmployeeListPage;
-import Pages.EmployeeProfilePage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -29,7 +29,7 @@ public class OpenExistingEmployeeDetailsEditButton extends BaseTest {
 
     private LoginFragment loginFragment = new LoginFragment();
     private EmployeeListPage employeeListPage = new EmployeeListPage();
-    private EmployeeProfilePage employeeProfilePage = new EmployeeProfilePage();
+    private EditProfilePage editProfilePage = new EditProfilePage();
     private EmployeeListFragment employeeListFragment = new EmployeeListFragment();
     private String RANDOM_EMPLOYEE_FULL_PROFILE_NAME;
 
@@ -48,7 +48,7 @@ public class OpenExistingEmployeeDetailsEditButton extends BaseTest {
                 .checkEditButtonIsEnabled();
         //step 2
         employeeListPage.clickEditButton();
-        employeeProfilePage
+        editProfilePage
                 .checkUserIsOnEmployeeProfilePage()
                 .checkFirstName(getRandomProfileFirstName())
                 .checkLastName(getRandomProfileLastName());

@@ -1,5 +1,6 @@
 package Base;
 
+import Pages.BasePage;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
