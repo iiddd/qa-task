@@ -59,7 +59,7 @@ public class CreateNewEmployeeFormatRestrictionEmail extends BaseTest {
     }
 
     @Test
-    public void test_015() {
+    public void test_016() {
         //step 1
         createProfilePage
                 .fillEmailField(getRandomAlphaNumeric());

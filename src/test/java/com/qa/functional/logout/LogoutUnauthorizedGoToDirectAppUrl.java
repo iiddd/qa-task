@@ -31,7 +31,7 @@ public class LogoutUnauthorizedGoToDirectAppUrl extends BaseTest {
     }
 
     @Test
-    public void test_020() {
+    public void test_021() {
         //step 1
         loginFragment.logout();
         driver.get(EMPLOYEE_LIST_PAGE_URL);

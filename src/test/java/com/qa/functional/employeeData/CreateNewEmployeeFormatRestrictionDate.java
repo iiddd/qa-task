@@ -88,7 +88,7 @@ public class CreateNewEmployeeFormatRestrictionDate extends BaseTest {
     }
 
     @Test
-    public void test_016() {
+    public void test_017() {
         //step 1
         createProfilePage
                 .fillDateField(INVALID_DATE_TO_TEST1);

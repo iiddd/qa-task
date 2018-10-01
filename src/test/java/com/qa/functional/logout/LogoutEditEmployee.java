@@ -36,7 +36,7 @@ public class LogoutEditEmployee extends BaseTest {
     }
 
     @Test
-    public void test_018() {
+    public void test_019() {
         //step 1
         employeeListPage
                 .selectEmployeeProfileByPartialName(PROFILE_NAME)

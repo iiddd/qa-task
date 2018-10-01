@@ -34,7 +34,7 @@ public class LogoutCreateEmployee extends BaseTest {
     }
 
     @Test
-    public void test_017() {
+    public void test_018() {
         //step 1
         employeeListPage.clickCreateButton();
         createProfilePage
