@@ -12,7 +12,7 @@ Clone git repo as a maven project
 
 Approach:
 I used pure Selenium as a framework (as the most popular framework for web applications test automation), Maven as builder (provide to use profile options), TestNG as test runner (easier to configurate out of the box)
-Page object pattern to make code more clear (fluence). Fragments used to keep common methods for spesified flows.
+Page object pattern to make code more clear (fluence). Fragments used to keep common methods for specified flows.
 Additional info: 
 Maven-surefire-plugin was used to set up system property variable in pom xml to build profile-based browser dependency.
 Test case description is added as a comment to every test class.
