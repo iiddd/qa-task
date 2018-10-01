@@ -62,6 +62,6 @@ public class ChangeEmployeeDetailsBasicFlow extends BaseTest {
 
     @AfterMethod
     public void removeCreatedUser() {
-        employeeListFragment.removeUserByPartialName(employeeData.getFirstName());
+        employeeListFragment.removeUserByPartialName(updatedEmployeeData.getFirstName());
     }
 }
