@@ -1,4 +1,4 @@
-package Base;
+package base;
 
 /**
  * This class is used to store common constants

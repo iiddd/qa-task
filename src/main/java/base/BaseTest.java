@@ -1,10 +1,10 @@
-package Base;
+package base;
 
 import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
-import static Base.DriverHolder.getDriver;
+import static base.DriverHolder.getDriver;
 
 /**
  * This class is used to set before and after actions for all tests

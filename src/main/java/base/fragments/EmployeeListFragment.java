@@ -1,10 +1,10 @@
-package Base.Fragments;
+package base.fragments;
 
-import Base.Models.EmployeeData;
-import Pages.*;
+import base.models.EmployeeData;
+import pages.*;
 
-import static Base.Constants.EMPLOYEE_LIST_PAGE_URL;
-import static Base.DriverHolder.getDriver;
+import static base.Constants.EMPLOYEE_LIST_PAGE_URL;
+import static base.DriverHolder.getDriver;
 
 /**
  * This class is used to store common methods for Employee list tests

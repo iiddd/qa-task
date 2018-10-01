@@ -1,6 +1,6 @@
-package Base.Models;
+package base.models;
 
-import Base.Utils.RandomUtils;
+import base.utils.RandomUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -1,8 +1,8 @@
 package com.qa.functional.logout;
 
-import Base.BaseTest;
-import Base.Fragments.LoginFragment;
-import Pages.LoginPage;
+import base.BaseTest;
+import base.fragments.LoginFragment;
+import pages.LoginPage;
 import org.testng.annotations.*;
 
 /**

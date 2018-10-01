@@ -1,9 +1,9 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.*;
 
-import static Base.Constants.*;
-import static Base.DriverHolder.getDriver;
+import static base.Constants.*;
+import static base.DriverHolder.getDriver;
 import static org.testng.Assert.*;
 
 /**

@@ -1,7 +1,7 @@
-package Pages;
+package pages;
 
-import Base.Models.EmployeeData;
-import Base.Utils.RandomUtils;
+import base.models.EmployeeData;
+import base.utils.RandomUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import static Base.Constants.*;
-import static Base.DriverHolder.getDriver;
+import static base.Constants.*;
+import static base.DriverHolder.getDriver;
 import static org.testng.Assert.*;
 import static org.testng.AssertJUnit.assertFalse;
 

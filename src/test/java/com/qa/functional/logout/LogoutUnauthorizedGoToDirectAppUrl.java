@@ -1,11 +1,11 @@
 package com.qa.functional.logout;
 
-import Base.BaseTest;
-import Base.Fragments.LoginFragment;
-import Pages.LoginPage;
+import base.BaseTest;
+import base.fragments.LoginFragment;
+import pages.LoginPage;
 import org.testng.annotations.*;
 
-import static Base.Constants.EMPLOYEE_LIST_PAGE_URL;
+import static base.Constants.EMPLOYEE_LIST_PAGE_URL;
 
 /**
  * Testcase name: Logout. Navigate to app direct url unauthorized

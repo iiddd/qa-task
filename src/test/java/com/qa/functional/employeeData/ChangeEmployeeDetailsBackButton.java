@@ -1,9 +1,9 @@
 package com.qa.functional.employeeData;
 
-import Base.BaseTest;
-import Base.Fragments.*;
-import Base.Models.*;
-import Pages.*;
+import base.BaseTest;
+import base.fragments.*;
+import base.models.*;
+import pages.*;
 import org.testng.annotations.*;
 
 /**

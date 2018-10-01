@@ -1,7 +1,7 @@
 package com.qa.functional.login;
 
-import Base.BaseTest;
-import Pages.LoginPage;
+import base.BaseTest;
+import pages.LoginPage;
 import org.testng.annotations.*;
 
 /**

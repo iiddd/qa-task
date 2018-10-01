@@ -1,10 +1,10 @@
 package com.qa.functional.login;
 
-import Base.BaseTest;
-import Pages.*;
+import base.BaseTest;
+import pages.*;
 import org.testng.annotations.Test;
 
-import static Base.Fragments.LoginFragment.*;
+import static base.fragments.LoginFragment.*;
 
 /**
  * Testcase name: Login. Basic flow

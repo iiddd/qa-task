@@ -1,10 +1,10 @@
-package Pages;
+package pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
 
-import static Base.DriverHolder.getDriver;
+import static base.DriverHolder.getDriver;
 
 /**
  * This class is used to store methods, required for all pages

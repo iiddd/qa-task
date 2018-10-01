@@ -1,10 +1,10 @@
-package Pages;
+package pages;
 
-import Base.Models.EmployeeData;
+import base.models.EmployeeData;
 import org.openqa.selenium.*;
 
-import static Base.Constants.ATTR_VALUE;
-import static Base.DriverHolder.getDriver;
+import static base.Constants.ATTR_VALUE;
+import static base.DriverHolder.getDriver;
 import static org.testng.Assert.*;
 
 /**

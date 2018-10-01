@@ -1,9 +1,9 @@
-package Base.Fragments;
+package base.fragments;
 
-import Pages.*;
+import pages.*;
 import org.openqa.selenium.*;
 
-import static Base.DriverHolder.driver;
+import static base.DriverHolder.driver;
 import static org.testng.Assert.assertTrue;
 
 /**
