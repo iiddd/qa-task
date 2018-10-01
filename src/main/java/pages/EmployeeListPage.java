@@ -105,7 +105,7 @@ public class EmployeeListPage extends BasePage {
 
     public EmployeeListPage selectEmployeeProfileByPartialName(String name) {
         waitForPageToLoad();
-        (getEmployeeListItemByPartialName(name)).click();
+        getEmployeeListItemByPartialName(name).click();
         return this;
     }
 

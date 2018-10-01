@@ -46,12 +46,10 @@ public class EmployeeDataBuilder {
     }
 
     public EmployeeData build() {
-        {
-            return new EmployeeData()
-                    .setEmail(email)
-                    .setFirstName(firstName)
-                    .setLastName(lastName)
-                    .setStartDate(startDate);
-        }
+        return new EmployeeData()
+                .setEmail(email)
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setStartDate(startDate);
     }
 }
