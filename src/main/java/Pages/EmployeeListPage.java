@@ -2,19 +2,16 @@ package Pages;
 
 import Base.Models.EmployeeData;
 import Base.Utils.RandomUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-import static Base.Constants.ATTR_CLASS;
-import static Base.Constants.EMPLOYEE_LIST_PAGE_URL;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static Base.Constants.*;
+import static Base.DriverHolder.getDriver;
+import static org.testng.Assert.*;
 import static org.testng.AssertJUnit.assertFalse;
 
 /**
@@ -34,13 +31,13 @@ public class EmployeeListPage extends BasePage {
 
     public EmployeeListPage checkUserIsOnEmployeeListPage() {
         waitForPageToLoad();
-        assertEquals(driver.getCurrentUrl(), EMPLOYEE_LIST_PAGE_URL);
+        assertEquals(getDriver().getCurrentUrl(), EMPLOYEE_LIST_PAGE_URL);
         return this;
     }
 
     public EmployeeListPage checkDeletePopUpTextByEmployeeData(EmployeeData employeeData) {
         String expectedText = String.format("Are you sure you want to delete %s %s?", employeeData.getFirstName(), employeeData.getLastName());
-        assertEquals(driver.switchTo().alert().getText(), expectedText);
+        assertEquals(getDriver().switchTo().alert().getText(), expectedText);
         return this;
     }
 
@@ -129,12 +126,12 @@ public class EmployeeListPage extends BasePage {
     }
 
     public EmployeeListPage declineDeleteConfirmation() {
-        driver.switchTo().alert().dismiss();
+        getDriver().switchTo().alert().dismiss();
         return this;
     }
 
     public EmployeeListPage acceptDeleteConfirmation() {
-        driver.switchTo().alert().accept();
+        getDriver().switchTo().alert().accept();
         //waiting for delete
         waitForSomeTime(2000);
         return this;
@@ -147,27 +144,27 @@ public class EmployeeListPage extends BasePage {
     private void doubleClickByElement(WebElement element) {
         //Since gecko driver has issue with actions.moveToElement, I have to scroll into view with JS
         scrollToElementWithJS(element);
-        new Actions(driver).moveToElement(element).doubleClick().perform();
+        new Actions(getDriver()).moveToElement(element).doubleClick().perform();
     }
 
     private void scrollToElementWithJS(WebElement element) {
-        ((JavascriptExecutor) driver).executeScript(JS_SCROLL_INTOVIEW_SCRIPT, element);
+        ((JavascriptExecutor) getDriver()).executeScript(JS_SCROLL_INTOVIEW_SCRIPT, element);
     }
 
     private WebElement getCreateButton() {
-        return driver.findElement(CREATE_BUTTON_LOCATOR);
+        return getDriver().findElement(CREATE_BUTTON_LOCATOR);
     }
 
     private WebElement getEditButton() {
-        return driver.findElement(EDIT_BUTTON_LOCATOR);
+        return getDriver().findElement(EDIT_BUTTON_LOCATOR);
     }
 
     private WebElement getDeleteButton() {
-        return driver.findElement(DELETE_BUTTON_LOCATOR);
+        return getDriver().findElement(DELETE_BUTTON_LOCATOR);
     }
 
     private WebElement getEmployeeListElement() {
-        return driver.findElement(EMPLOYEE_LIST_LOCATOR);
+        return getDriver().findElement(EMPLOYEE_LIST_LOCATOR);
     }
 
     private WebElement getEmployeeListItemByPartialName(String name) {
@@ -186,6 +183,6 @@ public class EmployeeListPage extends BasePage {
     }
 
     private List<WebElement> getListOfEmployee() {
-        return driver.findElements(EMPLOYEE_LIST_ITEM_LOCATOR);
+        return getDriver().findElements(EMPLOYEE_LIST_ITEM_LOCATOR);
     }
 }

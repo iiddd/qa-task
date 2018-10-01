@@ -1,12 +1,10 @@
 package com.qa.functional.login;
 
 import Base.BaseTest;
-import Pages.EmployeeListPage;
-import Pages.LoginPage;
+import Pages.*;
 import org.testng.annotations.Test;
 
-import static Base.Fragments.LoginFragment.LOGIN;
-import static Base.Fragments.LoginFragment.PASSWORD;
+import static Base.Fragments.LoginFragment.*;
 
 /**
  * Testcase name: Login. Basic flow
@@ -36,7 +34,9 @@ public class LoginBasicFlow extends BaseTest {
                 .checkUserNameFieldIsValid()
                 .checkPasswordFieldIsValid();
         //step 2
-        loginPage.clickLoginButton();
-        employeeListPage.checkUserIsOnEmployeeListPage();
+        loginPage
+                .clickLoginButton();
+        employeeListPage
+                .checkUserIsOnEmployeeListPage();
     }
 }

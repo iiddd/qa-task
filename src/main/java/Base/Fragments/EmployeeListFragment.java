@@ -1,18 +1,16 @@
 package Base.Fragments;
 
 import Base.Models.EmployeeData;
-import Pages.BasePage;
-import Pages.CreateProfilePage;
-import Pages.EditProfilePage;
-import Pages.EmployeeListPage;
+import Pages.*;
 
 import static Base.Constants.EMPLOYEE_LIST_PAGE_URL;
+import static Base.DriverHolder.getDriver;
 
 /**
  * This class is used to store common methods for Employee list tests
  */
 
-public class EmployeeListFragment extends BasePage {
+public class EmployeeListFragment {
 
     private static final String SPACE = " ";
     private LoginFragment loginFragment = new LoginFragment();
@@ -21,7 +19,8 @@ public class EmployeeListFragment extends BasePage {
     private EditProfilePage editProfilePage = new EditProfilePage();
 
     public void createEmployee(EmployeeData employeeData) {
-        employeeListPage.clickCreateButton();
+        employeeListPage
+                .clickCreateButton();
         createProfilePage
                 .checkUserIsOnCreateEmployeeProfilePage()
                 .fillFirstNameField(employeeData.getFirstName())
@@ -34,7 +33,8 @@ public class EmployeeListFragment extends BasePage {
 
     public void removeUserByPartialName(String name) {
         navigateToEmployeeListPage();
-        waitForPageToLoad();
+        employeeListPage
+                .waitForPageToLoad();
         employeeListPage
                 .openEmployeeProfileWithDoubleClickByPartialName(name);
         editProfilePage
@@ -52,8 +52,8 @@ public class EmployeeListFragment extends BasePage {
     }
 
     private void navigateToEmployeeListPage() {
-        driver.get(EMPLOYEE_LIST_PAGE_URL);
-        waitForPageToLoad();
+        getDriver().get(EMPLOYEE_LIST_PAGE_URL);
+//        waitForPageToLoad();
         loginFragment.loginToApp();
     }
 }

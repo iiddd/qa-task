@@ -1,16 +1,11 @@
 package com.qa.functional.employeeData;
 
 import Base.BaseTest;
-import Base.Fragments.EmployeeListFragment;
-import Base.Fragments.LoginFragment;
-import Base.Models.EmployeeData;
-import Base.Models.EmployeeDataBuilder;
+import Base.Fragments.*;
+import Base.Models.*;
 import Base.Utils.RandomUtils;
-import Pages.CreateProfilePage;
-import Pages.EmployeeListPage;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Format Restrictions. Names
@@ -48,7 +43,7 @@ import org.testng.annotations.Test;
 
 public class CreateNewEmployeeFormatRestrictionNames extends BaseTest {
 
-    private static final String RANDOM_FIRST_NAME = RandomUtils.getRandomAlphaNumeric(25);
+    private static final String FIRST_NAME = RandomUtils.getRandomAlphaNumeric(25);
     private LoginFragment loginFragment = new LoginFragment();
     private EmployeeListFragment employeeListFragment = new EmployeeListFragment();
     private EmployeeListPage employeeListPage = new EmployeeListPage();
@@ -57,8 +52,10 @@ public class CreateNewEmployeeFormatRestrictionNames extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
-        employeeListPage.clickCreateButton();
+        loginFragment
+                .loginToApp();
+        employeeListPage
+                .clickCreateButton();
     }
 
     @Test
@@ -71,7 +68,7 @@ public class CreateNewEmployeeFormatRestrictionNames extends BaseTest {
                 .clearFirstNameField();
         //step 2
         createProfilePage
-                .fillFirstNameField(RANDOM_FIRST_NAME);
+                .fillFirstNameField(FIRST_NAME);
         createProfilePage
                 .checkFirstNameFieldIsValid();
         //step 3
@@ -93,11 +90,12 @@ public class CreateNewEmployeeFormatRestrictionNames extends BaseTest {
                 .clickAddButton();
         employeeListPage
                 .checkUserIsOnEmployeeListPage()
-                .checkEmployeeIsInTheListByPartialName(RANDOM_FIRST_NAME);
+                .checkEmployeeIsInTheListByPartialName(FIRST_NAME);
     }
 
     @AfterMethod
     public void removeCreatedUser() {
-        employeeListFragment.removeUserByPartialName(RANDOM_FIRST_NAME);
+        employeeListFragment
+                .removeUserByPartialName(FIRST_NAME);
     }
 }

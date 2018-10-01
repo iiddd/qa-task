@@ -1,14 +1,12 @@
 package Pages;
 
 import Base.Models.EmployeeData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static Base.DriverHolder.getDriver;
+import static org.testng.Assert.*;
 
 /**
  * This page is used to store all Employee profile page methods
@@ -24,7 +22,7 @@ public class EditProfilePage extends BaseProfilePage {
     public EditProfilePage checkUserIsOnEditProfilePage() {
         waitForPageToLoad();
         Pattern pattern = Pattern.compile(EMPLOYEE_PROFILE_PAGE_URL_PATTERN);
-        Matcher matcher = pattern.matcher(driver.getCurrentUrl());
+        Matcher matcher = pattern.matcher(getDriver().getCurrentUrl());
         assertTrue(matcher.find());
         return this;
     }
@@ -36,7 +34,7 @@ public class EditProfilePage extends BaseProfilePage {
 
     public EditProfilePage checkDeletePopUpTextByEmployeeData(EmployeeData employeeData) {
         String expectedText = String.format("Are you sure you want to delete %s %s?", employeeData.getFirstName(), employeeData.getLastName());
-        assertEquals(driver.switchTo().alert().getText(), expectedText);
+        assertEquals(getDriver().switchTo().alert().getText(), expectedText);
         return this;
     }
 
@@ -56,24 +54,24 @@ public class EditProfilePage extends BaseProfilePage {
     }
 
     public EditProfilePage declineDeleteConfirmation() {
-        driver.switchTo().alert().dismiss();
+        getDriver().switchTo().alert().dismiss();
         return this;
     }
 
     public EditProfilePage acceptDeleteConfirmation() {
-        driver.switchTo().alert().accept();
+        getDriver().switchTo().alert().accept();
         return this;
     }
 
     private WebElement getUpdateButton() {
-        return driver.findElement(UPDATE_BUTTON_LOCATOR);
+        return getDriver().findElement(UPDATE_BUTTON_LOCATOR);
     }
 
     private WebElement getDeleteButton() {
-        return driver.findElement(DELETE_BUTTON_LOCATOR);
+        return getDriver().findElement(DELETE_BUTTON_LOCATOR);
     }
 
     private WebElement getBackButton() {
-        return driver.findElement(BACK_BUTTON_LOCATOR);
+        return getDriver().findElement(BACK_BUTTON_LOCATOR);
     }
 }

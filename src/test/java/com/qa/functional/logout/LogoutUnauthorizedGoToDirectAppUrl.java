@@ -3,13 +3,12 @@ package com.qa.functional.logout;
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
 import Pages.LoginPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import static Base.Constants.EMPLOYEE_LIST_PAGE_URL;
 
 /**
- * Testcase name: Logout. Employee page. Edit
+ * Testcase name: Logout. Navigate to app direct url unauthorized
  * Preconditions:
  * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
  * - Login to app as Luke Skywalker
@@ -33,8 +32,11 @@ public class LogoutUnauthorizedGoToDirectAppUrl extends BaseTest {
     @Test
     public void test_021() {
         //step 1
-        loginFragment.logout();
-        driver.get(EMPLOYEE_LIST_PAGE_URL);
-        loginPage.checkUserIsOnLoginPage();
+        loginFragment
+                .logout();
+        loginPage
+                .navigateTo(EMPLOYEE_LIST_PAGE_URL);
+        loginPage
+                .checkUserIsOnLoginPage();
     }
 }

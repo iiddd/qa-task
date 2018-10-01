@@ -1,12 +1,11 @@
 package Pages;
 
 import Base.Models.EmployeeData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import static Base.Constants.ATTR_VALUE;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static Base.DriverHolder.getDriver;
+import static org.testng.Assert.*;
 
 /**
  * This class is used to store common elements and locators for Create Employee page and Edit Employee page
@@ -128,18 +127,18 @@ public class BaseProfilePage<T extends BaseProfilePage> extends BasePage {
     }
 
     public WebElement getFirstNameField() {
-        return driver.findElement(FIRST_NAME_FIELD_LOCATOR);
+        return getDriver().findElement(FIRST_NAME_FIELD_LOCATOR);
     }
 
     public WebElement getLastNameField() {
-        return driver.findElement(LAST_NAME_FIELD_LOCATOR);
+        return getDriver().findElement(LAST_NAME_FIELD_LOCATOR);
     }
 
     public WebElement getDateField() {
-        return driver.findElement(DATE_FIELD_LOCATOR);
+        return getDriver().findElement(DATE_FIELD_LOCATOR);
     }
 
     public WebElement getEmailField() {
-        return driver.findElement(EMAIL_FIELD_LOCATOR);
+        return getDriver().findElement(EMAIL_FIELD_LOCATOR);
     }
 }

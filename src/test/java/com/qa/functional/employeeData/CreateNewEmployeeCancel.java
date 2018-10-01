@@ -2,12 +2,9 @@ package com.qa.functional.employeeData;
 
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
-import Base.Models.EmployeeData;
-import Base.Models.EmployeeDataBuilder;
-import Pages.CreateProfilePage;
-import Pages.EmployeeListPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Base.Models.*;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Cancel
@@ -32,13 +29,15 @@ public class CreateNewEmployeeCancel extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
+        loginFragment
+                .loginToApp();
     }
 
     @Test
     public void test_009() {
         //step 1
-        employeeListPage.clickCreateButton();
+        employeeListPage
+                .clickCreateButton();
         createProfilePage
                 .checkUserIsOnCreateEmployeeProfilePage()
                 .fillFirstNameField(employeeData.getFirstName())

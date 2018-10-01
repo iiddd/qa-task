@@ -2,11 +2,8 @@ package com.qa.functional.logout;
 
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
-import Pages.EditProfilePage;
-import Pages.EmployeeListPage;
-import Pages.LoginPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Logout. Employee page. Edit
@@ -31,8 +28,10 @@ public class LogoutEditEmployee extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
-        PROFILE_NAME = employeeListPage.getRandomEmployeeListProfileName();
+        loginFragment
+                .loginToApp();
+        PROFILE_NAME = employeeListPage
+                .getRandomEmployeeListProfileName();
     }
 
     @Test
@@ -43,7 +42,8 @@ public class LogoutEditEmployee extends BaseTest {
                 .clickEditButton();
         editProfilePage
                 .checkUserIsOnEditProfilePage();
-        loginFragment.logout();
+        loginFragment
+                .logout();
         loginPage
                 .checkUserIsOnLoginPage()
                 .checkUserNameFieldIsEmpty()

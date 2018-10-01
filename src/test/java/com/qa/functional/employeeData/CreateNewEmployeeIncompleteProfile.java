@@ -2,12 +2,9 @@ package com.qa.functional.employeeData;
 
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
-import Base.Models.EmployeeData;
-import Base.Models.EmployeeDataBuilder;
-import Pages.CreateProfilePage;
-import Pages.EmployeeListPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Base.Models.*;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Incomplete profile
@@ -46,8 +43,10 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
-        employeeListPage.clickCreateButton();
+        loginFragment
+                .loginToApp();
+        employeeListPage
+                .clickCreateButton();
     }
 
     @Test
@@ -58,7 +57,8 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
                 .fillFirstNameField(employeeData.getFirstName())
                 .fillLastNameField(employeeData.getLastName())
                 .fillDateField(employeeData.getStartDate());
-        createProfilePage.checkAddButtonIsDisabled();
+        createProfilePage
+                .checkAddButtonIsDisabled();
         //step 2
         createProfilePage
                 .checkUserIsOnCreateEmployeeProfilePage()
@@ -66,7 +66,8 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
                 .fillLastNameField(employeeData.getLastName())
                 .fillEmailField(employeeData.getEmail())
                 .clearDateField();
-        createProfilePage.checkAddButtonIsDisabled();
+        createProfilePage
+                .checkAddButtonIsDisabled();
         //step 3
         createProfilePage
                 .checkUserIsOnCreateEmployeeProfilePage()
@@ -74,7 +75,8 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
                 .fillEmailField(employeeData.getEmail())
                 .fillDateField(employeeData.getStartDate())
                 .clearFirstNameField();
-        createProfilePage.checkAddButtonIsDisabled();
+        createProfilePage
+                .checkAddButtonIsDisabled();
         //step 4
         createProfilePage
                 .checkUserIsOnCreateEmployeeProfilePage()
@@ -82,6 +84,7 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
                 .fillEmailField(employeeData.getEmail())
                 .fillDateField(employeeData.getStartDate())
                 .clearLastNameField();
-        createProfilePage.checkAddButtonIsDisabled();
+        createProfilePage
+                .checkAddButtonIsDisabled();
     }
 }

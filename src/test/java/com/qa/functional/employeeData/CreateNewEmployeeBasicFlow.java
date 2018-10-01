@@ -1,16 +1,10 @@
 package com.qa.functional.employeeData;
 
 import Base.BaseTest;
-import Base.Fragments.EmployeeListFragment;
-import Base.Fragments.LoginFragment;
-import Base.Models.EmployeeData;
-import Base.Models.EmployeeDataBuilder;
-import Pages.CreateProfilePage;
-import Pages.EditProfilePage;
-import Pages.EmployeeListPage;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Base.Fragments.*;
+import Base.Models.*;
+import Pages.*;
+import org.testng.annotations.*;
 
 import static Base.Constants.EMPTY_STRING;
 
@@ -59,13 +53,15 @@ public class CreateNewEmployeeBasicFlow extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
+        loginFragment
+                .loginToApp();
     }
 
     @Test
     public void test_008() {
         //step 1
-        employeeListPage.clickCreateButton();
+        employeeListPage
+                .clickCreateButton();
         createProfilePage
                 .checkUserIsOnCreateEmployeeProfilePage()
                 .checkFirstNameFieldIsDisplayed()
@@ -95,12 +91,14 @@ public class CreateNewEmployeeBasicFlow extends BaseTest {
                 .checkDateFieldIsValid()
                 .checkEmailFieldIsValid();
         //step 3
-        createProfilePage.clickAddButton();
+        createProfilePage
+                .clickAddButton();
         employeeListPage
                 .checkUserIsOnEmployeeListPage()
                 .checkEmployeeIsInTheListByPartialName(employeeData.getFirstName());
         //step 4
-        employeeListPage.openEmployeeProfileWithDoubleClickByPartialName(employeeData.getFirstName());
+        employeeListPage
+                .openEmployeeProfileWithDoubleClickByPartialName(employeeData.getFirstName());
         editProfilePage
                 .checkUserIsOnEditProfilePage()
                 .checkEmployeeDataIsEquals(employeeData);
@@ -108,6 +106,7 @@ public class CreateNewEmployeeBasicFlow extends BaseTest {
 
     @AfterMethod
     public void removeCreatedUser() {
-        employeeListFragment.removeUserByPartialName(employeeData.getFirstName());
+        employeeListFragment
+                .removeUserByPartialName(employeeData.getFirstName());
     }
 }

@@ -1,13 +1,10 @@
 package Pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriverException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import static Base.Constants.*;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static Base.DriverHolder.getDriver;
+import static org.testng.Assert.*;
 
 /**
  * This class is used to store all Login page methods
@@ -40,7 +37,7 @@ public class LoginPage extends BasePage {
         try {
             getLoginButton().click();
         } catch (WebDriverException e) {
-            ((JavascriptExecutor) driver).executeScript(JS_CLICK_SCRIPT, getLoginButton());
+            ((JavascriptExecutor) getDriver()).executeScript(JS_CLICK_SCRIPT, getLoginButton());
         }
         return this;
     }
@@ -88,7 +85,7 @@ public class LoginPage extends BasePage {
 
     public LoginPage checkUserIsOnLoginPage() {
         waitForPageToLoad();
-        assertEquals(driver.getCurrentUrl(), LOGIN_PAGE_URL);
+        assertEquals(getDriver().getCurrentUrl(), LOGIN_PAGE_URL);
         return this;
     }
 
@@ -103,18 +100,18 @@ public class LoginPage extends BasePage {
     }
 
     private WebElement getUserNameField() {
-        return driver.findElement(USERNAME_FIELD_LOCATOR);
+        return getDriver().findElement(USERNAME_FIELD_LOCATOR);
     }
 
     private WebElement getPasswordField() {
-        return driver.findElement(PASSWORD_FIELD_LOCATOR);
+        return getDriver().findElement(PASSWORD_FIELD_LOCATOR);
     }
 
     private WebElement getLoginButton() {
-        return driver.findElement(LOGIN_BUTTON_LOCATOR);
+        return getDriver().findElement(LOGIN_BUTTON_LOCATOR);
     }
 
     private WebElement getErrorMessage() {
-        return driver.findElement(ERROR_MESSAGE_LOCATOR);
+        return getDriver().findElement(ERROR_MESSAGE_LOCATOR);
     }
 }

@@ -2,11 +2,8 @@ package com.qa.functional.logout;
 
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
-import Pages.CreateProfilePage;
-import Pages.EmployeeListPage;
-import Pages.LoginPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Logout. Employee page. Create
@@ -30,16 +27,19 @@ public class LogoutCreateEmployee extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
+        loginFragment
+                .loginToApp();
     }
 
     @Test
     public void test_018() {
         //step 1
-        employeeListPage.clickCreateButton();
+        employeeListPage
+                .clickCreateButton();
         createProfilePage
                 .checkUserIsOnCreateEmployeeProfilePage();
-        loginFragment.logout();
+        loginFragment
+                .logout();
         loginPage
                 .checkUserIsOnLoginPage()
                 .checkUserNameFieldIsEmpty()

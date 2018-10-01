@@ -3,11 +3,10 @@ package com.qa.functional.logout;
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
 import Pages.LoginPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 /**
- * Testcase name: Logout. Employee page. Edit
+ * Testcase name: Logout. Employee page. Employee List
  * Preconditions:
  * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
  * - Login to app as Luke Skywalker
@@ -25,13 +24,15 @@ public class LogoutEmployeeList extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
+        loginFragment
+                .loginToApp();
     }
 
     @Test
     public void test_020() {
         //step 1
-        loginFragment.logout();
+        loginFragment
+                .logout();
         loginPage
                 .checkUserIsOnLoginPage()
                 .checkUserNameFieldIsEmpty()

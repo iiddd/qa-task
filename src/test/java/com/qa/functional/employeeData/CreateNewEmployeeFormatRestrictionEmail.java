@@ -3,10 +3,8 @@ package com.qa.functional.employeeData;
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
 import Base.Utils.RandomUtils;
-import Pages.CreateProfilePage;
-import Pages.EmployeeListPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Format Restrictions. Emails
@@ -54,8 +52,10 @@ public class CreateNewEmployeeFormatRestrictionEmail extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
-        employeeListPage.clickCreateButton();
+        loginFragment
+                .loginToApp();
+        employeeListPage
+                .clickCreateButton();
     }
 
     @Test

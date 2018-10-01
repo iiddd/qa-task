@@ -1,12 +1,9 @@
 package com.qa.functional.employeeData;
 
 import Base.BaseTest;
-import Base.Fragments.EmployeeListFragment;
-import Base.Fragments.LoginFragment;
-import Pages.EditProfilePage;
-import Pages.EmployeeListPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Base.Fragments.*;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Employee. Open existing employee details. Edit Button
@@ -35,8 +32,10 @@ public class OpenExistingEmployeeDetailsEditButton extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
-        PROFILE_NAME = employeeListPage.getRandomEmployeeListProfileName();
+        loginFragment
+                .loginToApp();
+        PROFILE_NAME = employeeListPage
+                .getRandomEmployeeListProfileName();
     }
 
     @Test
@@ -56,14 +55,17 @@ public class OpenExistingEmployeeDetailsEditButton extends BaseTest {
     }
 
     private void selectRandomProfile() {
-        employeeListPage.selectEmployeeProfileByPartialName(PROFILE_NAME);
+        employeeListPage
+                .selectEmployeeProfileByPartialName(PROFILE_NAME);
     }
 
     private String getRandomProfileFirstName() {
-        return employeeListFragment.getFirstNameByFullProfileName(PROFILE_NAME);
+        return employeeListFragment
+                .getFirstNameByFullProfileName(PROFILE_NAME);
     }
 
     private String getRandomProfileLastName() {
-        return employeeListFragment.getLastNameByFullProfileName(PROFILE_NAME);
+        return employeeListFragment
+                .getLastNameByFullProfileName(PROFILE_NAME);
     }
 }

@@ -1,11 +1,10 @@
 package Pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 import static Base.Constants.*;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import static Base.DriverHolder.getDriver;
+import static org.testng.Assert.*;
 import static org.testng.AssertJUnit.assertFalse;
 
 /**
@@ -20,7 +19,7 @@ public class CreateProfilePage extends BaseProfilePage {
 
     public CreateProfilePage checkUserIsOnCreateEmployeeProfilePage() {
         waitForPageToLoad();
-        assertEquals(driver.getCurrentUrl(), CREATE_EMPLOYEE_PROFILE_PAGE_URL);
+        assertEquals(getDriver().getCurrentUrl(), CREATE_EMPLOYEE_PROFILE_PAGE_URL);
         return this;
     }
 
@@ -86,10 +85,10 @@ public class CreateProfilePage extends BaseProfilePage {
     }
 
     private WebElement getCancelButton() {
-        return driver.findElement(CANCEL_BUTTON_LOCATOR);
+        return getDriver().findElement(CANCEL_BUTTON_LOCATOR);
     }
 
     private WebElement getAddButton() {
-        return driver.findElement(ADD_BUTTON_LOCATOR);
+        return getDriver().findElement(ADD_BUTTON_LOCATOR);
     }
 }

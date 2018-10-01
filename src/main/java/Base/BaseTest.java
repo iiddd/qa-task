@@ -1,36 +1,34 @@
 package Base;
 
-import Pages.BasePage;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
+
+import static Base.DriverHolder.getDriver;
 
 /**
  * This class is used to set before and after actions for all tests
  */
 
-public class BaseTest extends BasePage {
+public class BaseTest {
 
     private static final String BASE_URL = "http://cafetownsend-angular-rails.herokuapp.com/";
 
     @BeforeClass
     public void beforeAnyTest() {
+        DriverHolder.initDriver();
         openTestApp();
-        waitForPageToLoad();
     }
 
     @AfterClass
     public void afterTest() {
-        if (driver != null) {
-            driver.quit();
+        if (getDriver() != null) {
+            getDriver().quit();
         }
     }
 
     private void openTestApp() {
-        WebDriver driver = getWebDriver();
-        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
-        driver.get(BASE_URL);
+        getDriver().manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+        getDriver().get(BASE_URL);
     }
 }

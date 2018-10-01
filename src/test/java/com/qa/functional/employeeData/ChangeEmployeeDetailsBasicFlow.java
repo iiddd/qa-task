@@ -1,15 +1,10 @@
 package com.qa.functional.employeeData;
 
 import Base.BaseTest;
-import Base.Fragments.EmployeeListFragment;
-import Base.Fragments.LoginFragment;
-import Base.Models.EmployeeData;
-import Base.Models.EmployeeDataBuilder;
-import Pages.EditProfilePage;
-import Pages.EmployeeListPage;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Base.Fragments.*;
+import Base.Models.*;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Employee. Change Employee details
@@ -38,8 +33,10 @@ public class ChangeEmployeeDetailsBasicFlow extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
-        employeeListFragment.createEmployee(employeeData);
+        loginFragment
+                .loginToApp();
+        employeeListFragment
+                .createEmployee(employeeData);
     }
 
     @Test
@@ -62,6 +59,7 @@ public class ChangeEmployeeDetailsBasicFlow extends BaseTest {
 
     @AfterMethod
     public void removeCreatedUser() {
-        employeeListFragment.removeUserByPartialName(updatedEmployeeData.getFirstName());
+        employeeListFragment
+                .removeUserByPartialName(updatedEmployeeData.getFirstName());
     }
 }

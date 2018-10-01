@@ -1,17 +1,13 @@
 package com.qa.functional.employeeData;
 
 import Base.BaseTest;
-import Base.Fragments.EmployeeListFragment;
-import Base.Fragments.LoginFragment;
-import Base.Models.EmployeeData;
-import Base.Models.EmployeeDataBuilder;
-import Pages.EditProfilePage;
-import Pages.EmployeeListPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import Base.Fragments.*;
+import Base.Models.*;
+import Pages.*;
+import org.testng.annotations.*;
 
 /**
- * Testcase name: Employee. Create New Employee. Cancel
+ * Testcase name: Employee. Delete Employee
  * Preconditions:
  * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
  * - Login to app as Luke Skywalker
@@ -46,8 +42,10 @@ public class EmployeeProfileDeleteEmployee extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
-        employeeListFragment.createEmployee(employeeData);
+        loginFragment
+                .loginToApp();
+        employeeListFragment
+                .createEmployee(employeeData);
     }
 
     @Test

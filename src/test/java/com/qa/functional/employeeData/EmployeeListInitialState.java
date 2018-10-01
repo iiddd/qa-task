@@ -3,8 +3,7 @@ package com.qa.functional.employeeData;
 import Base.BaseTest;
 import Base.Fragments.LoginFragment;
 import Pages.EmployeeListPage;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 /**
  * Testcase name: Employee list. initial state
@@ -29,7 +28,8 @@ public class EmployeeListInitialState extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        loginFragment.loginToApp();
+        loginFragment
+                .loginToApp();
     }
 
     @Test

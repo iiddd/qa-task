@@ -2,10 +2,10 @@ package com.qa.functional.login;
 
 import Base.BaseTest;
 import Pages.LoginPage;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 /**
- * Testcase name: Login. Basic flow
+ * Testcase name: Login. Initial state
  * Preconditions:
  * Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
  * Step 1:
@@ -25,6 +25,11 @@ public class LoginInitialState extends BaseTest {
 
     private LoginPage loginPage = new LoginPage();
 
+    @BeforeMethod
+    public void preconditions() {
+        loginPage.waitForPageToLoad();
+    }
+
     @Test
     public void test_001() {
         //step 1
@@ -33,6 +38,7 @@ public class LoginInitialState extends BaseTest {
                 .checkPasswordFieldIsDisplayed()
                 .checkLoginButtonIsDisplayed();
         //step 2
-        loginPage.checkLoginButtonIsDisabled();
+        loginPage
+                .checkLoginButtonIsDisabled();
     }
 }

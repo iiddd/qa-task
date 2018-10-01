@@ -1,18 +1,16 @@
 package Base.Fragments;
 
-import Pages.BasePage;
-import Pages.EmployeeListPage;
-import Pages.LoginPage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import Pages.*;
+import org.openqa.selenium.*;
 
+import static Base.DriverHolder.driver;
 import static org.testng.Assert.assertTrue;
 
 /**
  * This class is used to reuse login process methods in all tests, where it is a precondition.
  */
 
-public class LoginFragment extends BasePage {
+public class LoginFragment {
 
     public static final String LOGIN = "Luke";
     public static final String PASSWORD = "Skywalker";
@@ -21,6 +19,7 @@ public class LoginFragment extends BasePage {
     private EmployeeListPage employeeListPage = new EmployeeListPage();
 
     public void loginToApp() {
+        loginPage.waitForPageToLoad();
         loginPage.inputLoginName(LOGIN)
                 .inputPassword(PASSWORD)
                 .clickLoginButton();
