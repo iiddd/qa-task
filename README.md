@@ -7,6 +7,9 @@ Latest Google Chrome browser or latest Mozilla Firefox
 JDK 1.8
 Intellij Idea 2018 (Eclipse may need additional config)
 
+Launch:
+Clone git repo as a maven project
+
 Approach:
 I used pure Selenium as a framework (as the most popular framework for web applications test automation), Maven as builder (provide to use profile options), TestNG as test runner (easier to configurate out of the box)
 Page object pattern to make code more clear (fluence). Fragments used to keep common methods for spesified flows.
