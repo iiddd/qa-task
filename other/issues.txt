@@ -1,0 +1,57 @@
+Password field contains correct password after logout
+Environment: http://cafetownsend-angular-rails.herokuapp.com/
+Browser: Browser independent
+Version: current )
+Steps:
+- Login to app
+- Click "Logout" button
+Expected result:
+- User is logged out
+- Username and Password fields are empty
+Actual result:
+- Password field contains valid password
+
+Employee profile. Start date field allows to enter alphabethical symbols after date
+Environment: http://cafetownsend-angular-rails.herokuapp.com/
+Browser: Browser independent
+Version: current )
+Steps:
+- Login to app
+- Click "Create" button
+- Enter "1950-12-31Ab" to Start date field
+Expected result:
+- Field is marked as invalid
+Actual result:
+- Field is marked as valid
+- It's possible to create user with incorrect data
+NOTE: It's great to have such validation on UI and Backend/API side
+
+Employee profile. Email field allows to enter invalid email
+Environment: http://cafetownsend-angular-rails.herokuapp.com/
+Browser: Browser independent
+Version: current )
+Steps:
+- Login to app
+- Click "Create" button
+- Enter "123@123" to Start date field
+Expected result:
+- Field is marked as invalid
+Actual result:
+- Field is marked as valid
+- It's possible to create user with incorrect data
+NOTE: It's great to have such validation on UI and Backend/API side
+
+Impossible to delete employee by clicking delete button on Employee list page
+Environment: http://cafetownsend-angular-rails.herokuapp.com/
+Browser: Browser independent
+Version: current )
+Steps:
+- Login to app
+- Select employee
+- Click "Delete" button
+Expected result:
+- Employee is removed from the list
+Actual result:
+- Employee is moved to another position in the list
+Workaround:
+- Employee may be deleted by clicking "Delete" button on Edit employee page

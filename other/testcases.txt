@@ -1,0 +1,413 @@
+ * Test 001
+ * Testcase name: Login. Initial state
+ * Preconditions:
+ * Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * Step 1:
+ * Check elements on the page
+ * Expected results:
+ * Following elements should be displayed on the page:
+ * - Login field
+ * - Password field
+ * - "Login" button
+ * Step 2:
+ * Check that "Login" button is disabled by default
+ * Expected result:
+ * "Login" button is disabled
+
+ * Test 002
+ * Testcase name: Login. Basic flow
+ * Preconditions:
+ * Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * Step 1:
+ * Enter correct login and password
+ * Expected results:
+ * Fields marked as valid
+ * Step 2:
+ * Click "Login" button
+ * Expected result:
+ * User is redirected to Employee list page
+
+ * Test 003
+ * Testcase name: Login. Incorrect Login
+ * Preconditions:
+ * Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * Step 1:
+ * - Enter incorrect login and correct password
+ * - Click "Submit" button
+ * Expected results:
+ * Error message with following text is displayed "Invalid username or password!"
+
+ * Test 004
+ * Testcase name: Login. Incorrect Password
+ * Preconditions:
+ * Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * Step 1:
+ * - Enter correct login and incorrect password
+ * - Click "Submit" button
+ * Expected results:
+ * Error message with following text is displayed "Invalid username or password!"
+
+ * Test 005
+ * Testcase name: Employee list. initial state
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * Step 1:
+ * Check Employee list page initial state:
+ * Expected results:
+ * Following elements are displayed on the page:
+ * - "Create" button
+ * - "Edit" button (Disabled by default)
+ * - "Delete" button (Disabled by default)
+ * - Employee list
+ * - "Logout" button
+
+ * Test 006
+ * Testcase name: Open existing employee details. Double click
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * Step 1:
+ * Open Any Employee details using double click
+ * Expected results:
+ * - Employee details page is opened
+ * - Employee first name and last name are the same as in the list
+
+ * Test 007
+ * Testcase name: Employee. Open existing employee details. Edit Button
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * Step 1:
+ * Select random employee details
+ * Expected results:
+ * - "Edit" button becomes enabled
+ * - "Delete" button becomes enabled
+ * Step 2:
+ * Click "Edit" button
+ * Expected results:
+ * - Employee details page is opened
+ * - Employee first name and last name are the same as in the list
+
+ * Test 008
+ * Testcase name: Employee. Create New Employee. Basic flow
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * Step 1:
+ * Click "Create" button
+ * Expected results:
+ * - User is redirected to Employee Profile page
+ * - Following elements are displayed on the page:
+ * - "Logout" button
+ * - "Cancel" button
+ * - "First name" field empty by default
+ * - "First Last" field empty by default
+ * - "Start date" field empty by default
+ * - "Email" field empty by default
+ * - "Add" button disabled by default
+ * Step 2:
+ * Fill-in all fields with correct data (First name, last name, start date, email)
+ * Expected results:
+ * - All fields are validated correctly
+ * - "Add" button becomes enabled
+ * Step 3:
+ * Click "Add" button
+ * Expected reuslt:
+ * - User is redirected to Employee list page
+ * - Employee with defined First name and Last name is in the list
+ * Step 4:
+ * Open Created employee profile
+ * Expected result:
+ * - User is redirected to Employee profile page
+ * - User data corresponds to just created employee
+
+ * Test 009
+ * Testcase name: Employee. Create New Employee. Cancel
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * Step 1:
+ * - Click "Create" button
+ * - Fill-in all fields with correct data (First name, last name, start date, email)
+ * - Click "Cancel" button
+ * Expected results:
+ * - User is redirected to Employee list page
+ * - There is no employee with such first name/last name in the list
+
+ * Test 010
+ * Testcase name: Employee List. Delete employee from the list
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Create new Employee
+ * Step 1:
+ * - Select created employee
+ * Expected result:
+ * - Click "Delete" button
+ * Expected results:
+ * Browser alert is displayed with text:
+ * "Are you sure you want to delete FIRSTNAME LASTNAME?"
+ * Step 2:
+ * Click "Cancel" button in browser pop-up
+ * Expected result:
+ * Employee is not removed
+ * Step 3:
+ * - Click "Delete" button
+ * - Click "OK" button
+ * Expected result:
+ * Employee successfully deleted. There is no such employee in the list
+
+ * Test 011
+ * Testcase name: Employee. Delete Employee
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Create new Employee
+ * Step 1:
+ * - Oped created employee profile
+ * - Click "Delete" button
+ * Expected result:
+ * - Browser alert is displayed with text:
+ * "Are you sure you want to delete FIRSTNAME LASTNAME?"
+ * Step 2:
+ * - Click "Cancel" button
+ * Expected result:
+ * - User is on Edit profile page
+ * - User details are not changed
+ * Step 3:
+ * - Click "Delete" button
+ * - Submit Delete Confirmation
+ * Expected result:
+ * - User is on Employee list page
+ * - Employee successfully deleted. There is no such employee in the list
+
+ * Test 012
+ * Testcase name: Employee. Change Employee details
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Create new Employee
+ * Step 1:
+ * - Oped created employee profile
+ * - Edit employee profile data
+ * - Click "Update" button
+ * Expected result:
+ * - User is redirected to Employee list page
+ * - There is no user with first created employee details in the list
+ * - There is a user with updated details in the list
+
+ * Test 013
+ * Testcase name: Employee. Change Employee details. Back
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Create new Employee
+ * Step 1:
+ * - Oped created employee profile
+ * - Edit employee profile data
+ * - Click "Back" button
+ * Expected result:
+ * - User is redirected to Employee list page
+ * - There is a user with first created employee details in the list
+ * - There is no user with updated details in the list
+
+ * Test 014
+ * Testcase name: Employee. Create New Employee. Incomplete profile
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Click "Create" button
+ * Step 1:
+ * - Fill-in fields with correct data without email (First name, last name, start date)
+ * - Check "Create" button is disabled
+ * Expected results:
+ * "Create" button is disabled
+ * Step 2:
+ * - Fill-in fields with correct data without start date (First name, last name, email)
+ * - Check "Create" button is disabled
+ * Expected results:
+ * "Create" button is disabled
+ * Step 2:
+ * - Fill-in fields with correct data without first name (last name, email, start date)
+ * - Check "Create" button is disabled
+ * Expected results:
+ * "Create" button is disabled
+ * Step 3:
+ * - Fill-in fields with correct data without last name (First name, start date, email)
+ * - Check "Create" button is disabled
+ * Expected results:
+ * "Create" button is disabled
+
+ * Test 015
+ * Testcase name: Employee. Create New Employee. Format Restrictions. Names
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Click "Create" button
+ * Step 1:
+ * - Enter random alphanumeric string with length 2 symbols to First name field
+ * - Check field validation state
+ * Expected results:
+ * Field is valid
+ * Step 2:
+ * - Enter random alphanumeric string with length 25 symbols to First name field
+ * - Check field validation state
+ * Expected results:
+ * Field is valid
+ * Step 3:
+ * Enter random alphanumeric string with length 2 symbols to Last name field
+ * - Check field validation state
+ * Expected results:
+ * Field is valid
+ * Step 4:
+ * - Enter random alphanumeric string with length 25 symbols to Last name field
+ * - Check field validation state
+ * Expected results:
+ * Field is valid
+ * Step 5:
+ * - Fill in other user details
+ * - Click "Add" button
+ * Expected result:
+ * - User is redirected to Employee List page
+ * - There is a user with specified First and Last names
+
+ * Test 016
+ * Testcase name: Employee. Create New Employee. Format Restrictions. Emails
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Click "Create" button
+ * Step 1:
+ * - Enter random alphanumeric string with length 3 symbols to Email field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 2:
+ * - Enter random alphanumeric string + @ to email field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 3:
+ * Enter random alphanumeric string + @ + random alphanumeric string to email field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 4:
+ * - Enter random alphanumeric string + @ + random alphanumeric string + "." to email field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 5:
+ * - Enter @ + random alphanumeric string + "." to email field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 5:
+ * - Enter @ + random alphanumeric string + "." + alphanumeric to email field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+
+ * Test 017
+ * Testcase name: Employee. Create New Employee. Format Restrictions. Date
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Click "Create" button
+ * Step 1:
+ * - Enter "2040-13-01" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 2:
+ * - Enter "1950-00-14" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 3:
+ * - Enter "2040-12-32" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 4:
+ * - Enter "1950-01-00" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 5:
+ * - Enter "204a-01-31" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 6:
+ * - Enter "1950-0b-12" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 7:
+ * - Enter "2018-01-0b" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 8:
+ * - Enter "2019-02-13bc" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is invalid
+ * Step 9:
+ * - Enter "1950-01-31" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is valid
+ * Step 10:
+ * - Enter "2040-12-01" to date name field
+ * - Check field validation state
+ * Expected results:
+ * Field is valid
+
+ * Test 018
+ * Testcase name: Logout. Employee page. Create
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Navigate to Create Employee page
+ * Step 1:
+ * - Click "Logout" button
+ * Expected results:
+ * - User is redirected to Login page
+ * - Username and password fields are empty
+
+ * Test 019
+ * Testcase name: Logout. Employee page. Edit
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * - Navigate to Edit Employee page
+ * Step 1:
+ * - Click "Logout" button
+ * Expected results:
+ * - User is redirected to Login page
+ * - Username and password fields are empty
+
+ * Test 020
+ * Testcase name: Logout. Employee page. Employee List
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * Step 1:
+ * - Click "Logout" button
+ * Expected results:
+ * - User is redirected to Login page
+ * - Username and password fields are empty
+
+ * Test 021
+ * Testcase name: Logout. Navigate to app direct url unauthorized
+ * Preconditions:
+ * - Open Test app in browser (http://cafetownsend-angular-rails.herokuapp.com/)
+ * - Login to app as Luke Skywalker
+ * Step 1:
+ * - Click "Logout" button
+ * - Navigate to Employee list page direct url
+ * Expected result:
+ * User is redirected to login page
