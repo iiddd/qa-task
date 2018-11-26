@@ -3,8 +3,8 @@ package com.qa.functional.employeeData;
 import base.BaseTest;
 import base.fragments.*;
 import base.models.*;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 import static base.Constants.EMPTY_STRING;
 
@@ -83,8 +83,7 @@ public class CreateNewEmployeeBasicFlow extends BaseTest {
                 .fillFirstNameField(employeeData.getFirstName())
                 .fillLastNameField(employeeData.getLastName())
                 .fillDateField(employeeData.getStartDate())
-                .fillEmailField(employeeData.getEmail());
-        createProfilePage
+                .fillEmailField(employeeData.getEmail())
                 .checkAddButtonIsEnabled()
                 .checkFirstNameFieldIsValid()
                 .checkLastNameFieldIsValid()

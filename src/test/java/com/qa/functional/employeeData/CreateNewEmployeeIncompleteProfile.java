@@ -3,8 +3,8 @@ package com.qa.functional.employeeData;
 import base.BaseTest;
 import base.fragments.LoginFragment;
 import base.models.*;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Incomplete profile
@@ -56,8 +56,7 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
                 .checkUserIsOnCreateEmployeeProfilePage()
                 .fillFirstNameField(employeeData.getFirstName())
                 .fillLastNameField(employeeData.getLastName())
-                .fillDateField(employeeData.getStartDate());
-        createProfilePage
+                .fillDateField(employeeData.getStartDate())
                 .checkAddButtonIsDisabled();
         //step 2
         createProfilePage
@@ -65,8 +64,7 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
                 .fillFirstNameField(employeeData.getFirstName())
                 .fillLastNameField(employeeData.getLastName())
                 .fillEmailField(employeeData.getEmail())
-                .clearDateField();
-        createProfilePage
+                .clearDateField()
                 .checkAddButtonIsDisabled();
         //step 3
         createProfilePage
@@ -74,8 +72,7 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
                 .fillLastNameField(employeeData.getLastName())
                 .fillEmailField(employeeData.getEmail())
                 .fillDateField(employeeData.getStartDate())
-                .clearFirstNameField();
-        createProfilePage
+                .clearFirstNameField()
                 .checkAddButtonIsDisabled();
         //step 4
         createProfilePage
@@ -83,8 +80,7 @@ public class CreateNewEmployeeIncompleteProfile extends BaseTest {
                 .fillFirstNameField(employeeData.getFirstName())
                 .fillEmailField(employeeData.getEmail())
                 .fillDateField(employeeData.getStartDate())
-                .clearLastNameField();
-        createProfilePage
+                .clearLastNameField()
                 .checkAddButtonIsDisabled();
     }
 }

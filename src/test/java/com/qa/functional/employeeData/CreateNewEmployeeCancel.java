@@ -3,8 +3,8 @@ package com.qa.functional.employeeData;
 import base.BaseTest;
 import base.fragments.LoginFragment;
 import base.models.*;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Cancel
@@ -43,8 +43,7 @@ public class CreateNewEmployeeCancel extends BaseTest {
                 .fillFirstNameField(employeeData.getFirstName())
                 .fillLastNameField(employeeData.getLastName())
                 .fillDateField(employeeData.getStartDate())
-                .fillEmailField(employeeData.getEmail());
-        createProfilePage
+                .fillEmailField(employeeData.getEmail())
                 .clickCancelButton();
         employeeListPage
                 .checkUserIsOnEmployeeListPage()

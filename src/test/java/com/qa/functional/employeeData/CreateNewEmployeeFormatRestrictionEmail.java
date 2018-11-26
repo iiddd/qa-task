@@ -3,8 +3,8 @@ package com.qa.functional.employeeData;
 import base.BaseTest;
 import base.fragments.LoginFragment;
 import base.utils.RandomUtils;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Format Restrictions. Emails
@@ -62,38 +62,32 @@ public class CreateNewEmployeeFormatRestrictionEmail extends BaseTest {
     public void test_016() {
         //step 1
         createProfilePage
-                .fillEmailField(getRandomAlphaNumeric());
-        createProfilePage
+                .fillEmailField(getRandomAlphaNumeric())
                 .checkEmailFieldIsInvalid()
                 .clearEmailField();
         //step 2
         createProfilePage
-                .fillEmailField(getRandomAlphaNumeric() + "@");
-        createProfilePage
+                .fillEmailField(getRandomAlphaNumeric() + "@")
                 .checkEmailFieldIsInvalid()
                 .clearEmailField();
         //step 3
         createProfilePage
-                .fillEmailField(getRandomAlphaNumeric() + "@" + getRandomAlphaNumeric());
-        createProfilePage
+                .fillEmailField(getRandomAlphaNumeric() + "@" + getRandomAlphaNumeric())
                 .checkEmailFieldIsInvalid()
                 .clearEmailField();
         //step 4
         createProfilePage
-                .fillEmailField(getRandomAlphaNumeric() + "@" + getRandomAlphaNumeric() + ".");
-        createProfilePage
+                .fillEmailField(getRandomAlphaNumeric() + "@" + getRandomAlphaNumeric() + ".")
                 .checkEmailFieldIsInvalid()
                 .clearEmailField();
         //step 5
         createProfilePage
-                .fillEmailField("@" + getRandomAlphaNumeric() + ".");
-        createProfilePage
+                .fillEmailField("@" + getRandomAlphaNumeric() + ".")
                 .checkEmailFieldIsInvalid()
                 .clearEmailField();
         //step 6
         createProfilePage
-                .fillEmailField("@" + getRandomAlphaNumeric() + "." + getRandomAlphaNumeric());
-        createProfilePage
+                .fillEmailField("@" + getRandomAlphaNumeric() + "." + getRandomAlphaNumeric())
                 .checkEmailFieldIsInvalid()
                 .clearEmailField();
     }

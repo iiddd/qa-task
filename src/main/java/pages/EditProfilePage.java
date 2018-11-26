@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
  * This page is used to store all Employee profile page methods
  */
 
-public class EditProfilePage extends BaseProfilePage {
+public class EditProfilePage extends BaseProfilePage<EditProfilePage> {
 
     private static final String EMPLOYEE_PROFILE_PAGE_URL_PATTERN = "(http://cafetownsend-angular-rails.herokuapp.com/employees/)+([0-9]+)+/edit";
     private static final By UPDATE_BUTTON_LOCATOR = By.xpath("//button[@class='main-button']");

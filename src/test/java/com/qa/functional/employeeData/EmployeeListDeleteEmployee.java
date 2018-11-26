@@ -3,8 +3,8 @@ package com.qa.functional.employeeData;
 import base.BaseTest;
 import base.fragments.*;
 import base.models.*;
-import pages.EmployeeListPage;
 import org.testng.annotations.*;
+import pages.EmployeeListPage;
 
 /**
  * Testcase name: Employee List. Delete employee from the list

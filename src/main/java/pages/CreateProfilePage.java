@@ -11,7 +11,7 @@ import static org.testng.AssertJUnit.assertFalse;
  * This page is used to store all Employee profile page methods
  */
 
-public class CreateProfilePage extends BaseProfilePage {
+public class CreateProfilePage extends BaseProfilePage<CreateProfilePage> {
 
     private static final String CREATE_EMPLOYEE_PROFILE_PAGE_URL = "http://cafetownsend-angular-rails.herokuapp.com/employees/new";
     private static final By CANCEL_BUTTON_LOCATOR = By.cssSelector(".subButton.bCancel");

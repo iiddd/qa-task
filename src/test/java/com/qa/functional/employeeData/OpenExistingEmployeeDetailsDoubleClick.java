@@ -2,8 +2,8 @@ package com.qa.functional.employeeData;
 
 import base.BaseTest;
 import base.fragments.*;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 /**
  * Testcase name: Open existing employee details. Double click

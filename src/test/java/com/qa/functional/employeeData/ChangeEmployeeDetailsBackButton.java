@@ -3,8 +3,8 @@ package com.qa.functional.employeeData;
 import base.BaseTest;
 import base.fragments.*;
 import base.models.*;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 /**
  * Testcase name: Employee. Change Employee details. Back
@@ -48,8 +48,7 @@ public class ChangeEmployeeDetailsBackButton extends BaseTest {
                 .fillFirstNameField(updatedEmployeeData.getFirstName())
                 .fillLastNameField(updatedEmployeeData.getLastName())
                 .fillDateField(updatedEmployeeData.getStartDate())
-                .fillEmailField(updatedEmployeeData.getEmail());
-        editProfilePage
+                .fillEmailField(updatedEmployeeData.getEmail())
                 .clickBackButton();
         employeeListPage
                 .checkUserIsOnEmployeeListPage()

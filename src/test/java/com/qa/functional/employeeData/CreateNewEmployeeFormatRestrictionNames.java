@@ -4,8 +4,8 @@ import base.BaseTest;
 import base.fragments.*;
 import base.models.*;
 import base.utils.RandomUtils;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Format Restrictions. Names
@@ -62,31 +62,26 @@ public class CreateNewEmployeeFormatRestrictionNames extends BaseTest {
     public void test_015() {
         //step 1
         createProfilePage
-                .fillFirstNameField(RandomUtils.getRandomAlphaNumeric(2));
-        createProfilePage
+                .fillFirstNameField(RandomUtils.getRandomAlphaNumeric(2))
                 .checkFirstNameFieldIsValid()
                 .clearFirstNameField();
         //step 2
         createProfilePage
-                .fillFirstNameField(FIRST_NAME);
-        createProfilePage
+                .fillFirstNameField(FIRST_NAME)
                 .checkFirstNameFieldIsValid();
         //step 3
         createProfilePage
-                .fillLastNameField(RandomUtils.getRandomAlphaNumeric(2));
-        createProfilePage
+                .fillLastNameField(RandomUtils.getRandomAlphaNumeric(2))
                 .checkLastNameFieldIsValid()
                 .clearLastNameField();
         //step 4
         createProfilePage
-                .fillLastNameField(RandomUtils.getRandomAlphaNumeric(25));
-        createProfilePage
+                .fillLastNameField(RandomUtils.getRandomAlphaNumeric(25))
                 .checkLastNameFieldIsValid();
         //step 5
         createProfilePage
                 .fillDateField(employeeData.getStartDate())
-                .fillEmailField(employeeData.getEmail());
-        createProfilePage
+                .fillEmailField(employeeData.getEmail())
                 .clickAddButton();
         employeeListPage
                 .checkUserIsOnEmployeeListPage()

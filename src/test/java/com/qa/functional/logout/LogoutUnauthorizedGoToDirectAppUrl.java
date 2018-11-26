@@ -2,8 +2,8 @@ package com.qa.functional.logout;
 
 import base.BaseTest;
 import base.fragments.LoginFragment;
-import pages.LoginPage;
 import org.testng.annotations.*;
+import pages.LoginPage;
 
 import static base.Constants.EMPLOYEE_LIST_PAGE_URL;
 

@@ -1,8 +1,8 @@
 package com.qa.functional.login;
 
 import base.BaseTest;
-import pages.LoginPage;
 import org.testng.annotations.*;
+import pages.LoginPage;
 
 /**
  * Testcase name: Login. Initial state

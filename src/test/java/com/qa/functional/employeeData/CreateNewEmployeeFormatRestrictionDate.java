@@ -2,8 +2,8 @@ package com.qa.functional.employeeData;
 
 import base.BaseTest;
 import base.fragments.LoginFragment;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 /**
  * Testcase name: Employee. Create New Employee. Format Restrictions. Date
@@ -91,62 +91,52 @@ public class CreateNewEmployeeFormatRestrictionDate extends BaseTest {
     public void test_017() {
         //step 1
         createProfilePage
-                .fillDateField(INVALID_DATE_TO_TEST1);
-        createProfilePage
+                .fillDateField(INVALID_DATE_TO_TEST1)
                 .checkDateFieldIsInvalid()
                 .clearDateField();
         //step 2
         createProfilePage
-                .fillDateField(INVALID_DATE_TO_TEST2);
-        createProfilePage
+                .fillDateField(INVALID_DATE_TO_TEST2)
                 .checkDateFieldIsInvalid()
                 .clearDateField();
         //step 3
         createProfilePage
-                .fillDateField(INVALID_DATE_TO_TEST3);
-        createProfilePage
+                .fillDateField(INVALID_DATE_TO_TEST3)
                 .checkDateFieldIsInvalid()
                 .clearDateField();
         //step 4
         createProfilePage
-                .fillDateField(INVALID_DATE_TO_TEST4);
-        createProfilePage
+                .fillDateField(INVALID_DATE_TO_TEST4)
                 .checkDateFieldIsInvalid()
                 .clearDateField();
         //step 5
         createProfilePage
-                .fillDateField(INVALID_DATE_TO_TEST5);
-        createProfilePage
+                .fillDateField(INVALID_DATE_TO_TEST5)
                 .checkDateFieldIsInvalid()
                 .clearDateField();
         //step 6
         createProfilePage
-                .fillDateField(INVALID_DATE_TO_TEST6);
-        createProfilePage
+                .fillDateField(INVALID_DATE_TO_TEST6)
                 .checkDateFieldIsInvalid()
                 .clearDateField();
         //step 7
         createProfilePage
-                .fillDateField(INVALID_DATE_TO_TEST7);
-        createProfilePage
+                .fillDateField(INVALID_DATE_TO_TEST7)
                 .checkDateFieldIsInvalid()
                 .clearDateField();
         //step 8
         createProfilePage
-                .fillDateField(INVALID_DATE_TO_TEST8);
-        createProfilePage
+                .fillDateField(INVALID_DATE_TO_TEST8)
                 .checkDateFieldIsInvalid()
                 .clearDateField();
         //step 9
         createProfilePage
-                .fillDateField(VALID_DATE_TO_TEST1);
-        createProfilePage
+                .fillDateField(VALID_DATE_TO_TEST1)
                 .checkDateFieldIsValid()
                 .clearDateField();
         //step 10
         createProfilePage
-                .fillDateField(VALID_DATE_TO_TEST2);
-        createProfilePage
+                .fillDateField(VALID_DATE_TO_TEST2)
                 .checkDateFieldIsValid()
                 .clearDateField();
     }

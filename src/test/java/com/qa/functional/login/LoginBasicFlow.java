@@ -1,8 +1,8 @@
 package com.qa.functional.login;
 
 import base.BaseTest;
-import pages.*;
 import org.testng.annotations.Test;
+import pages.*;
 
 import static base.fragments.LoginFragment.*;
 

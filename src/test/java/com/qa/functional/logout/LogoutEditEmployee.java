@@ -2,8 +2,8 @@ package com.qa.functional.logout;
 
 import base.BaseTest;
 import base.fragments.LoginFragment;
-import pages.*;
 import org.testng.annotations.*;
+import pages.*;
 
 /**
  * Testcase name: Logout. Employee page. Edit

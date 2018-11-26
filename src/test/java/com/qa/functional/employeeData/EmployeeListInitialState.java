@@ -2,8 +2,8 @@ package com.qa.functional.employeeData;
 
 import base.BaseTest;
 import base.fragments.LoginFragment;
-import pages.EmployeeListPage;
 import org.testng.annotations.*;
+import pages.EmployeeListPage;
 
 /**
  * Testcase name: Employee list. initial state

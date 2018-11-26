@@ -1,7 +1,7 @@
 package base.fragments;
 
-import pages.*;
 import org.openqa.selenium.*;
+import pages.*;
 
 import static base.DriverHolder.driver;
 import static org.testng.Assert.assertTrue;
